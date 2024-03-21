@@ -25,7 +25,7 @@ class FrontController extends Controller
     }
 
     public function show(Announcement $announcement){
-        dd($announcement);
+       
         return view('announcements.detail',compact('announcement'));
 
     }

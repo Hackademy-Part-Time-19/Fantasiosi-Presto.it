@@ -7,8 +7,7 @@
       <p class="card-text text-dark">{{$category->name}}</p>
       <p class="card-text text-dark">{{$user->name}}</p>
       <p class="card-text text-dark">{{$created->format('d/m/Y')}}</p>
-      <a href="{{route('dettaglio',compact('announcement'))}}" class="btn btn-primary">Vai al dettaglio</a>
-      
+      {{$slot}}
       
     </div>
   </div>

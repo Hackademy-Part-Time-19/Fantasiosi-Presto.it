@@ -19,10 +19,10 @@ Route::get('/',[FrontController::class, 'welcome'])->name('welcome');
 
 Route::get('/announcement/index',[FrontController::class, 'index'])->name('index');
 
-Route::get('/announcement/{category}',[FrontController::class,'categoryShow'])->name('category.show');
+Route::get('/category/announcement/{category}',[FrontController::class,'categoryShow'])->name('category.show');
 
 Route::get('/announcement/{announcement}',[FrontController::class,'show']
-)->name('dettaglio');
+)->name('announcement.show');
 
 
 Route::middleware('auth')->group(function(){
