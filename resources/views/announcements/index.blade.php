@@ -2,7 +2,7 @@
     <h1 class="text-center mt-5 mb-5">Annunci</h1>
  <div class="container d-flex flex-wrap justify-content-center gap-3" style="min-height:68vh; ">
     @if(count($announcements) == 0)
-        <h1 class="text-center mt-5">Non ci sono annunci</h1>
+        <h1 class="text-center mt-5 " style="color: var(--gray-text-color); font-weight:200;">Non ci sono annunci</h1>
 
     @endif
 

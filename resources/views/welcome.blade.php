@@ -10,7 +10,7 @@
     </div>
     <div class="Featured-Products d-flex justify-content-center flex-column align-items-center text-center" style="padding-bottom: 5rem">
         <h1 class="fw-bold display-6" style="margin-top: 5rem">Featured Products</h1>
-        <p class="fw-normal" style="color:#707070;">Check out our handpicked selection of must-have items.</p>
+        <p class="fw-normal" style="color:#707070;">Check out our last selection of items.</p>
         <div class="cards m-1 d-flex flex-row gap-5">
             @foreach ($announcements as $announcement)
             <div class="card-product">
@@ -84,7 +84,7 @@
     </div>
     <div class="Featured-Products d-flex justify-content-center flex-column align-items-center text-center" style="padding-bottom: 5rem">
         <h1 class="fw-bold display-6" style="margin-top: 5rem">Featured Products</h1>
-        <p class="fw-normal" style="color:#707070;">Check out our handpicked selection of must-have items.</p>
+        <p class="fw-normal" style="color:#707070;">Check out our last selection of items.</p>
         <div class="cards m-1 d-flex flex-row gap-5">
         @foreach ($announcements as $announcement)
         <div class="card-product">

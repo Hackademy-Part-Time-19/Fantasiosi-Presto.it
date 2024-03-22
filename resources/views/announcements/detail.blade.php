@@ -10,10 +10,10 @@
                     <img style="border: 1px solid black; max-width:270px; max-height:160px;" src="{{Storage::url('immagini/Nuovoprogetto.png')}}"  class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img style="border: 1px solid black; max-width:270px; max-height:160px;" src="{{Storage::url('immagini/Nuovoprogetto.png')}}" class="d-block w-100" alt="...">
+                    <img style="border: 1px solid black; max-width:270px; max-height:160px;" src="{{Storage::url('immagini/Nuovo_progetto_1.png')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img style="border: 1px solid black; max-width:270px; max-height:160px;" src="{{Storage::url('immagini/Nuovoprogetto.png')}}" class="d-block w-100" alt="...">
+                    <img style="border: 1px solid black; max-width:270px; max-height:160px;" src="{{Storage::url('immagini/Nuovo_progetto.png')}}" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

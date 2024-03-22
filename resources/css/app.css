@@ -10,6 +10,7 @@ body,html{
 }
 
 body{
+    background-color: #E2E2E2;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -17,6 +18,11 @@ body{
 }
 .nav-item{
     color: black!important;
+}
+
+.navbar{
+    background-color: #eceaea;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.055);
 }
 .description{
     color: var(--gray-text-color);
@@ -71,7 +77,7 @@ body{
 
 
 .Featured-Products{
-    background-color: #F3F4F6;
+    background-color: #eceaea;
 }
 .cards h5{
     font-size: 0.8rem;
@@ -136,6 +142,10 @@ body{
 
 footer p, li{
     font-size: 0.8rem;
+}
+footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.055);
+    background-color: #eceaea;
 }
 
 .card-container {
