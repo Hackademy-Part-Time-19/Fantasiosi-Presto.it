@@ -33,7 +33,7 @@
         </div>
         <label for="categories">Categorie</label>
         <select class="form-select mb-3 text-capitalize" aria-label="Categorie" wire:model.defer="category">
-
+            <option selected>--Seleziona categoria--</option>
            @foreach ($categories as $category)
             <option value="{{$category->id}}">{{$category->name}}</option>
            @endforeach
