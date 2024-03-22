@@ -16,6 +16,7 @@ class FrontController extends Controller
     public function index()
     {
         $announcements = Announcement::all()->sortByDesc('created_at');
+        $announcements =Announcement::paginate(4);
         return view('announcements.index', compact('announcements'));
     }
 

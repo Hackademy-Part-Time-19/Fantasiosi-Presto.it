@@ -18,5 +18,6 @@
 
         </x-card>
     @endforeach
+    {{$announcements->links()}}
 </div>
 </x-layout>

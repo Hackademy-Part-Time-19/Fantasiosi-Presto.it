@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Category;
 use Illuminate\Support\Facades\Schema;
-
+use illuminate\pagination\Paginator;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -26,5 +26,7 @@ class AppServiceProvider extends ServiceProvider
            $categories = Category::all();
            View::share('categories', $categories);
        }
+       Paginator::useBootstrap();
+
     }
 }
