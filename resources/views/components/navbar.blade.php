@@ -13,8 +13,8 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <div>
-                    <input type="checkbox" class="checkbox" id="checkbox">
+                <div class="visually-hidden">
+                    <input type="checkbox" class="checkbox" id="checkbox" name="checkbox" >
                     <label for="checkbox" class="checkbox-label">
                       <i class="fas fa-moon"></i>
                       <i class="fas fa-sun"></i>
@@ -24,26 +24,29 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{route('welcome')}}">Home</a>
                 </li>
-                
-                @auth
 
-                    <form action="/logout" method="POST">
+                @auth
+                <li class="nav-item d-flex  align-items-center">
+
+                    <button class="btn btn-dark px-2 mx-2" style="padding: 0.5px 0px 0.5px 0px; font-size: 12px;"><a style="text-decoration: none; color:white;" href="{{route('announcements.create')}}">Crea Articolo</a></button>
+                </li>
+                    <form action="/logout" method="POST" style="display: flex; align-items: center">
                         @csrf
-                        <button class="btn btn-link">Logout</button>
+                        <button class="btn btn-dark px-2 mx-2" style="padding: 0.5px 0px 0.5px 0px; font-size: 12px">Logout</button>
                     </form>
 
                 @endauth
-                <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown link
+                <div class="dropdown show d-flex align-items-center justify-content-center" style="position: relative">
+                    <a class="btn btn-dark dropdown-toggle p-0 px-2 text-center" style="height:20px; width:100%; font-size: 12px" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Categorie
                     </a>
-                  
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="position: absolute; top: 100%">
                         @foreach ($categories as $category)
-                            <a class="dropdown-item" href="{{route('category.show', compact('category'))}}">{{$category->name}}</a>
+                            <a class="dropdown-item" href="{{route('category.show', compact('category'))}}" style="text-transform: capitalize">{{$category->name}}</a>
                         @endforeach
-                      
-                    
+
+
                     </div>
                   </div>
                 @guest

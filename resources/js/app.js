@@ -39,8 +39,35 @@ function carousel() {
 generateDots(document.getElementsByClassName("card-customer").length);
 carousel();
 
+/* const checkbox = document.getElementById("checkbox");
 
-const checkbox = document.getElementById("checkbox")
+// Funzione per impostare lo stato dark nel localStorage
+const setDarkModeState = (isChecked) => {
+    localStorage.setItem("darkMode", isChecked ? "enabled" : "disabled");
+};
+
+// Funzione per controllare lo stato dark nel localStorage
+const checkDarkModeState = () => {
+    const darkModeState = localStorage.getItem("darkMode");
+    if (darkModeState === "enabled") {
+        document.body.classList.add("dark");
+        checkbox.checked = true;
+    } else {
+        document.body.classList.remove("dark");
+        checkbox.checked = false;
+    }
+};
+
+// Aggiungi un listener per il cambio del checkbox
 checkbox.addEventListener("change", () => {
-  document.body.classList.toggle("dark")
-})
+    document.body.classList.toggle("dark");
+    setDarkModeState(checkbox.checked);
+});
+
+// Controlla lo stato dark al caricamento della pagina
+checkDarkModeState();
+
+
+ */
+
+

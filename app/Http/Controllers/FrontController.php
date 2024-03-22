@@ -21,11 +21,11 @@ class FrontController extends Controller
 
     public function categoryShow(Category $category){
         return view('category.show',compact('category'));
-        
+
     }
 
     public function show(Announcement $announcement){
-       
+
         return view('announcements.detail',compact('announcement'));
 
     }

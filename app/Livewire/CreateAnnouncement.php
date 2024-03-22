@@ -39,7 +39,7 @@ class CreateAnnouncement extends Component
             'user_id'=>auth()->user()->id,
         ]);
 
-        
+
 
 
 

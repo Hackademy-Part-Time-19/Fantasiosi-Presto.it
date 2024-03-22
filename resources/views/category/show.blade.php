@@ -1,5 +1,7 @@
 <x-layout>
-    <h1>Esplora {{$category->name}}</h1>
+    <div class="Announcements container" style="min-height:80vh;">
+    <h1 class="text-center mt-5 mb-5 ">Esplora {{$category->name}}</h1>
+    <div class="container d-flex justify-content-center gap-3">
     @forelse ($category->announcements as $announcement)
          <x-card
         :user="$announcement->user"
@@ -12,7 +14,8 @@
 
         </x-card>
     @empty
-        <h1>Non ci sono articoli in {{$category->name}}</h1>
+        <h1 class="text-center mt-5" style="color: var(--gray-text-color); font-weight:200;">Non ci sono articoli in {{$category->name}}</h1>
     @endforelse
-    
+</div>
+</div>
 </x-layout>

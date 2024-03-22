@@ -8,7 +8,7 @@
 
             <!-- Form centrato -->
             <div class="col-lg-4">
-                <form method="POST" action="{{route('register')}}">
+                <form id="register-form" method="POST" action="{{route('register')}}">
                     @csrf
                     <h1>Register</h1>
                     <div class="mb-3">
@@ -19,8 +19,9 @@
                         @enderror
                     </div>
                     <div class="mb-3">
+
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" {{old('email')}}>
+                        <input type="email" name="email" class="form-control" id="email" value="{{ session('registration_email') }}" {{old('email')}}>
                         @error('email')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
