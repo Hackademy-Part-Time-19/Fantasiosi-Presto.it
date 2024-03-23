@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin123'),
+            'is_revisor'=>true
         ]);
 
         User::factory()->count(5)->create();

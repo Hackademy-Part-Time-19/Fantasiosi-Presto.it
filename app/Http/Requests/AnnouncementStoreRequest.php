@@ -22,9 +22,22 @@ class AnnouncementStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'=> 'required|max:50',
-            'body'=> 'required|max:2500',
-            'price'=> 'required'
+            'title' => 'required|max:50',
+            'body' => 'required|max:2500',
+            'price' => 'required|numeric' 
+        ];
+        
+    }
+    public function messages()
+    {
+        return [
+            'title.required' => 'Il titolo è obbligatorio.',
+            'title.max' => 'Il titolo non può superare i 50 caratteri.',
+            'body.required' => 'Il corpo è obbligatorio.',
+            'body.max' => 'Il corpo non può superare i 2500 caratteri.',
+            'price.required' => 'Il prezzo è obbligatorio.',
+            'price.decimal' => 'Il prezzo deve essere un valore numerico decimale.',
         ];
     }
+    
 }

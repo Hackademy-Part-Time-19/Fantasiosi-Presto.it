@@ -32,6 +32,7 @@ class CreateAnnouncement extends Component
     public function store(User $user)
     {
         $category = Category::find($this->category);
+        
         $category->announcements()->create([
             'title' => $this->title,
             'body' => $this->body,

@@ -10,15 +10,10 @@ class FrontController extends Controller
 {
     public function welcome()
     {
-        $announcements = Announcement::latest()->take(3)->get();
+        $announcements = Announcement::Where('is_accepted',true)->latest()->take(3)->get();
         return view('welcome', compact('announcements'));
     }
-    public function index()
-    {
-        $announcements = Announcement::all()->sortByDesc('created_at');
-        $announcements =Announcement::paginate(4);
-        return view('announcements.index', compact('announcements'));
-    }
+   
 
     public function categoryShow(Category $category){
         return view('category.show',compact('category'));

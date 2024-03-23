@@ -1,4 +1,10 @@
 <x-layout>
+    @session('access.denied')
+    <div style="display:flex;align-items:center; justify-content:center; background-color:red" class=" mt-4">
+        <span style="color:white; font-size:28px; font-weight:bold;">{{$value}}</span>
+    </div> 
+    @endsession
+
     @auth
 
 
