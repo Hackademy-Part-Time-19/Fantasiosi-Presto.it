@@ -15,25 +15,30 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//Rotta Welcome
 Route::get('/',[FrontController::class, 'welcome'])->name('welcome');
 
 
 
+//Rotta Category 
 Route::get('/category/announcement/{category}',[FrontController::class,'categoryShow'])->name('category.show');
 
-Route::get('/announcement/{announcement}',[FrontController::class,'show']
-)->name('announcement.show');
 
 
-Route::middleware('auth')->group(function(){
-    Route::resource('announcements',AnnouncementsController::class);
+//Rotte Announcement
+Route::get('announcements', [AnnouncementsController::class, 'index'])->name('announcements.index');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/announcement/{announcement}',[FrontController::class,'show'])->name('announcement.show');
+    Route::resource('announcements', AnnouncementsController::class)->except(['index', 'create', 'store', 'edit', 'update', 'destroy']);
 });
 
 
+//Rotte Revisor
 Route::middleware('isRevisor')->group(function(){
-    // Home revisore
+// Home revisore
 Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.index');
+
 //Accetta annuncio
 Route::patch('/accetta/annuncio/{announcement}',[RevisorController::class,'acceptAnnouncement'])->name('revisor.accept');
 
