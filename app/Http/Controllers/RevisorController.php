@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
@@ -21,5 +25,6 @@ class RevisorController extends Controller
         $announcement->setAccepted(false);
         return redirect()->back()->with('message','complimenti, hai rifiutato l\' annuncio');
     }
+    
     
 }

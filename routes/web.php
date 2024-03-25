@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\AnnouncementsController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\RevisorController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AnnouncementsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,15 @@ Route::patch('/accetta/annuncio/{announcement}',[RevisorController::class,'accep
 Route::patch('/rifiuta/annuncio/{announcement}',[RevisorController::class,'rejectAnnouncement'])->name('revisor.reject');
 });
 
+//Rotte MAKE Revisor
+
+Route::get('/richiesta/revisore',[RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+
+Route::get('/rendi/revisore/{user}',[RevisorController::class, 'makeRevisor'])->name('make.revisor');
+
+
+//ROTTE MAIL
+
+Route::get('/mail',[MailController::class, 'revisorForm'])->name('revisor.form');
+
+Route::post('invio/mail', [MailController::class, 'sendMail'])->name('send.mail');
