@@ -4,8 +4,10 @@
         <li style="list-style: none; margin-right: 1rem">Terms of Service</li>
         <li style="list-style: none">Privacy</li>
     </ul>
+    @auth
+        <ul class="d-flex align-items-center">
+            <li style="list-style: none"><a href="{{ route('revisor.form') }}" class="nav-link">Lavora con noi</a></li>
+        </ul>
+    @endauth
 
-    <ul class="d-flex align-items-center">
-        <li><a href="{{route('revisor.form')}}">Lavora con noi</a></li>
-    </ul>
 </footer>

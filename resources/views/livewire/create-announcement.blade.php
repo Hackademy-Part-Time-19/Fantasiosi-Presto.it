@@ -16,8 +16,8 @@
     </div>
     <div class="mb-3">
         <label for="body" class="form-label">Corpo dell'annuncio</label>
-        <input type="text" name="body" wire:model="body" class="form-control" id="body"
-            value="{{ old('body') }}">
+        <textarea type="text" name="body" wire:model="body" class="form-control" id="body" value="{{ old('body') }}"></textarea>
+            
         @error('body')
             <div><span class="text-danger">{{ $message }}</span></div>
         @enderror
