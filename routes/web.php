@@ -27,15 +27,17 @@ Route::get('/category/announcement/{category}',[FrontController::class,'category
 
 //Rotte Announcement
 Route::get('announcements', [AnnouncementsController::class, 'index'])->name('announcements.index');
-
+Route::resource('announcements', AnnouncementsController::class);
 Route::middleware(['auth'])->group(function () {
     Route::get('/announcement/{announcement}',[FrontController::class,'show'])->name('announcement.show');
-    Route::resource('announcements', AnnouncementsController::class)->except(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+    Route::resource('announcements', AnnouncementsController::class)->only('create');
+   
 });
 
 
+
 //Rotte Revisor
-Route::middleware('isRevisor')->group(function(){
+Route::middleware(['isRevisor'])->group(function(){
 // Home revisore
 Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.index');
 

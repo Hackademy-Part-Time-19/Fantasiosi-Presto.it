@@ -20,6 +20,10 @@ class AnnouncementsController extends Controller
         return view('announcements.index', compact('announcements'));
     }
 
+    public function create(){
+
+        return view('announcements.create');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -32,5 +36,5 @@ class AnnouncementsController extends Controller
         return redirect()->back()->with('success', 'Annuncio caricato con successo');
     }
 
-
+  
 }
