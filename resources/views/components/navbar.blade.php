@@ -88,6 +88,10 @@
                 @endguest
 
             </ul>
+            <form action="{{route('announcements.search')}}" method="GET">
+                <input name="searched" type="search" placeholder="Search">
+                <button type="submit">Search</button>
+            </form>
 
         </div>
     </div>

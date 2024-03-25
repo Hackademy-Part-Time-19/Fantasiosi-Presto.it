@@ -61,3 +61,9 @@ Route::get('/rendi/revisore/{user}',[RevisorController::class, 'makeRevisor'])->
 Route::get('/mail',[MailController::class, 'revisorForm'])->name('revisor.form');
 
 Route::post('invio/mail', [MailController::class, 'sendMail'])->name('send.mail');
+
+
+
+//RICERCA ANNUNCIO
+
+Route::get('/ricerca/annuncio',[FrontController::class,'searchAnnouncements'])->name('announcements.search');

@@ -22,13 +22,7 @@ class MailController extends Controller
     public function revisorForm(){
         return view('revisor.richiesta');
     }
-    public function becomeRevisor(){
-        
-        Mail::to('admin@gmail.com')->send(new BecomeRevisor(Auth::user()));
-
-        return redirect()->back()->with('message','complimenti, hai richiesto di diventare revisore');
- 
-    }
+  
 
     public function makeRevisor(User $user){
         Artisan::call('presto:makeUserRevisor', ['email'=> $user->email]);
