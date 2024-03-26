@@ -2,8 +2,8 @@
     <div class="container-fluid">
 
         <div class="d-flex align-items-center">
-            <img class="img-fluid me-2" style="border-radius: 50%" width="50"
-                src="{{ Storage::url('immagini/logo.png') }}" alt="Immagine Logo">
+            <div class="logo-image" style="border-radius: 50%;; max-width: 50px; margin-right: 5px">
+            </div>
             <div style="border-right: 1px solid var(--gray-text-color);">
 
             <a class="navbar-brand me-auto" style="font-weight: 500; text-transform: uppercase; padding-right: 1rem; color:white;" href="{{route('welcome')}}">Presto.it</a>

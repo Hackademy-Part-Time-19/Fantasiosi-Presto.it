@@ -8,22 +8,22 @@
                     <div style="display: flex; justify-content:center; align-items:center; gap: 20px;">
                         <div style="">
                             <div class="mb-3 text-center">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" style="width: 600px">
+                                <label for="email" class="form-label">Indirizzo email</label>
+                                <input type="email" class="form-control" id="email" style="width: 600px" placeholder="Inserisci email..">
 
                             </div>
                         </div>
                         <div style="">
                             <div class="mb-3 text-center">
                                 <label for="name" class="form-label">Nome</label>
-                                <input type="name" class="form-control" id="name" style="width: 320px">
+                                <input type="name" class="form-control" id="name" style="width: 320px" placeholder="Inserisci nome..">
                             </div>
                         </div>
                     </div>
                         <div style="display: flex; justify-content:center; align-items:center;">
                             <div class="mb-3 text-center">
-                                <label for="text" class="form-label">Parlaci di te</label>
-                                <textarea type="text" class="form-control" id="text" style="width: 650px; height: 100px"></textarea>
+                                <label for="text" class="form-label">Parla un po' di te!</label>
+                                <textarea type="text" class="form-control" id="text" style="width: 650px; height: 100px" placeholder="Parlaci un po' di te.."></textarea>
                             </div>
                         </div>
 
@@ -31,7 +31,7 @@
 
                 </div>
                 <div style="display: flex; justify-content:center; align-items:center;">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-dark">Submit</button>
                 </div>
             </div>
         </div>

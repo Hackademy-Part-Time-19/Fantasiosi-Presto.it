@@ -20,7 +20,7 @@
         <div class="cards m-1 d-flex flex-row gap-5">
             @foreach ($announcements as $announcement)
             <div class="card-product">
-                <img class="img-fluid" height="250" width="250"  src="{{Storage::url('immagini/logo.png')}}" alt="">
+                <img class="img-fluid" height="250" width="250"  src="{{Storage::url('immagini/Nuovoprogetto.png')}}" alt="">
                 <h5 style="width: 250px; margin-top: 1rem">{{$announcement->title}}</h5>
                 <p >{{$announcement->price}}<span style="color: black">€</span></p>
             </div>
