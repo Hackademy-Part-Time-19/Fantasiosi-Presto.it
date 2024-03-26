@@ -93,9 +93,9 @@
                 @endguest
 
             </ul>
-            <form action="{{route('announcements.search')}}" method="GET">
-                <input name="searched" type="search" placeholder="Search">
-                <button type="submit">Search</button>
+            <form action="{{route('announcements.search')}}" method="GET" class="d-flex justify-content-center align-items-center" >
+                <input name="searched" type="search" placeholder="Search" style="border-radius: 5px; margin-right: 5px  ">
+                <button type="submit" class="btn btn-dark px-2 py-1" style="font-size:12px;" >Search</button>
             </form>
 
         </div>
