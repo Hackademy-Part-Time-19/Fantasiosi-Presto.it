@@ -5,9 +5,12 @@
             <img class="img-fluid me-2" style="border-radius: 50%" width="50"
                 src="{{ Storage::url('immagini/logo.png') }}" alt="Immagine Logo">
             <div style="border-right: 1px solid var(--gray-text-color);">
-                <a class="navbar-brand me-auto" style="font-weight: 500; text-transform: uppercase; padding-right: 1rem"
-                    href="{{ route('welcome') }}">Presto.it</a>
-            </div>
+
+            <a class="navbar-brand me-auto" style="font-weight: 500; text-transform: uppercase; padding-right: 1rem; color:white;" href="{{route('welcome')}}">Presto.it</a>
+        </div>
+
+
+
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
