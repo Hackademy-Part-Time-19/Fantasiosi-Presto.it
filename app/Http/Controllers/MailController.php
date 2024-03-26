@@ -13,8 +13,18 @@ class MailController extends Controller
 {
     public function sendMail(Request $request){
 
-        $data= $request->all();
-        Mail::to("$request->email")->send(new BecomeRevisor($request->name, $request->email, $request->text));
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'text' => 'required|string',
+            'file' => 'required|file', 
+        ]);
+        
+        $extension=$request->file->extension();
+        $file=$request->file->storeAs('public/Cv_utente' . auth::user()->id . '.' . $extension);
+        
+
+        Mail::to("admin@gmail.com")->send(new BecomeRevisor($request->name, $request->email, $request->text,$file));
         return redirect()->back()->with('message',"la mail e' stata inviata con successo");
 
     }
