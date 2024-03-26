@@ -20,7 +20,7 @@
     @empty
         <div class="col-12">
             <div>
-                <p>Non ci sono annunci per questa ricerca. Prova a cambiare parola</p>
+                <h1 class="text-center mt-5 " style="color: var(--gray-text-color); font-weight:200;">Non ci sono annunci per questa ricerca. Prova a cambiare parola</h1>
             </div>
         </div>
     @endforelse
