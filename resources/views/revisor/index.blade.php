@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container" style="min-height: 69vh; margin-top: 50px">
+    <div class="container" style="min-height: 68vh; margin-top: 50px;">
     <div>
         <h1 style="text-align:center">
             {{ $announcement_to_check ? 'ecco l\' annuncio da revisionare' : 'non ci sono annunci da revisonare ' }}
