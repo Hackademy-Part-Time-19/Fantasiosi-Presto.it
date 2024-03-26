@@ -1,6 +1,6 @@
 <x-layout>
     <h1 class="text-center mt-5 mb-5">Annunci</h1>
- <div class="container d-flex flex-wrap justify-content-center gap-3" style="min-height:68vh; ">
+ <div class="container d-flex flex-wrap justify-content-center gap-3" style="min-height:68vh; position:relative">
     @if(count($announcements) == 0)
         <h1 class="text-center mt-5 " style="color: var(--gray-text-color); font-weight:200;">Non ci sono annunci</h1>
 
@@ -18,9 +18,9 @@
 
         </x-card>
     @empty
-        <div class="col-12">
+        <div class="col-12" style="position: absolute;">
             <div>
-                <p>Non ci sono annunci per questa ricerca. Prova a cambiare parola</p>
+                <p class="text-center text-dark ">Non ci sono annunci per questa ricerca. Prova a cambiare parola</p>
             </div>
         </div>
     @endforelse

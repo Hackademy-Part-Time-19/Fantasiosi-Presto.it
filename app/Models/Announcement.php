@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
@@ -37,7 +38,7 @@ class Announcement extends Model
     public function setAccepted($value){
         $this->is_accepted = $value;
         $this->save();
-        return true;        
+        return true;
 
     }
 

@@ -2,12 +2,15 @@
     <div class="container-fluid">
 
         <div class="d-flex align-items-center">
-            <img class="img-fluid me-2" style="border-radius: 50%" width="50"
-                src="{{ Storage::url('immagini/logo.png') }}" alt="Immagine Logo">
-            <div style="border-right: 1px solid var(--gray-text-color);">
-                <a class="navbar-brand me-auto" style="font-weight: 500; text-transform: uppercase; padding-right: 1rem"
-                    href="{{ route('welcome') }}">Presto.it</a>
+            <div class="logo-image" style="border-radius: 50%;; max-width: 50px; margin-right: 5px">
             </div>
+            <div style="border-right: 1px solid var(--gray-text-color);">
+
+            <a class="navbar-brand me-auto" style="font-weight: 500; text-transform: uppercase; padding-right: 1rem; color:white;" href="{{route('welcome')}}">Presto.it</a>
+        </div>
+
+
+
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
@@ -35,12 +38,14 @@
                     <a class="nav-link" href="{{ route('announcements.index') }}">Annunci</a>
                 </li>
                 @if (Auth::check() && Auth::user()->is_revisor)
-                    <li>
-                        <a href="{{ route('revisor.index') }}" class="nav-link">Zona revisore <span>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="text-white nav-link" href="{{ route('revisor.index') }}" class="nav-link">Zona revisore <span>
                                 {{ App\Models\announcement::toBeRevisionedCount() }} <span>unread messages</span>
                             </span>
                         </a>
                     </li>
+                </ul>
                 @endif
             </ul>
 
@@ -88,9 +93,9 @@
                 @endguest
 
             </ul>
-            <form action="{{route('announcements.search')}}" method="GET">
-                <input name="searched" type="search" placeholder="Search">
-                <button type="submit">Search</button>
+            <form action="{{route('announcements.search')}}" method="GET" class="d-flex justify-content-center align-items-center" >
+                <input name="searched" type="search" placeholder="Search" style="border-radius: 5px; margin-right: 5px  ">
+                <button type="submit" class="btn btn-dark px-2 py-1" style="font-size:12px;" >Search</button>
             </form>
 
         </div>

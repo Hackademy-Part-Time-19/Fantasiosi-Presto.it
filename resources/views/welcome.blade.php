@@ -2,7 +2,7 @@
     @session('access.denied')
     <div style="display:flex;align-items:center; justify-content:center; background-color:red" class=" mt-4">
         <span style="color:white; font-size:28px; font-weight:bold;">{{$value}}</span>
-    </div> 
+    </div>
     @endsession
 
     @auth
@@ -20,9 +20,9 @@
         <div class="cards m-1 d-flex flex-row gap-5">
             @foreach ($announcements as $announcement)
             <div class="card-product">
-                <img class="img-fluid" height="250" width="250"  src="{{Storage::url('immagini/logo.png')}}" alt="">
-                <h5>{{$announcement->title}}</h5>
-                <p>{{$announcement->price}}</p>
+                <img class="img-fluid" height="250" width="250"  src="{{Storage::url('immagini/Nuovoprogetto.png')}}" alt="">
+                <h5 style="width: 250px; margin-top: 1rem">{{$announcement->title}}</h5>
+                <p >{{$announcement->price}}<span style="color: black">€</span></p>
             </div>
             @endforeach
             </div>
@@ -95,8 +95,8 @@
         @foreach ($announcements as $announcement)
         <div class="card-product">
             <img class="img-fluid" height="250" width="250"  src="{{Storage::url('immagini/logo.png')}}" alt="">
-            <h5>{{$announcement->title}}</h5>
-            <p>{{$announcement->price}}</p>
+            <h5 h5 style="width: 250px; margin-top: 1rem">{{$announcement->title}}</h5>
+            <p>{{$announcement->price}}<span style="color: black">€</span></p>
         </div>
         @endforeach
         </div>
