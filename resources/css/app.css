@@ -26,6 +26,18 @@ nav .nav-item a{
     color: black!important;
 }
 
+.logo-image{
+    background-image: url("logo.png");
+    background-size: 80px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50px;
+    width: 50px;
+
+
+}
+
 
 .navbar{
      background-color: #111111;
