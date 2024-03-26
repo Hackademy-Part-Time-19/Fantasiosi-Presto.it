@@ -6,7 +6,7 @@
 
     @endif
 
-    @foreach ($announcements as $announcement)
+    @forelse ($announcements as $announcement)
         <x-card
         :user="$announcement->user"
         :title="$announcement->title"
@@ -17,6 +17,13 @@
         <a href="{{route('announcement.show',compact('announcement'))}}" class="btn btn-primary">Vai al dettaglio</a>
 
         </x-card>
-    @endforeach
+    @empty
+        <div class="col-12">
+            <div>
+                <p>Non ci sono annunci per questa ricerca. Prova a cambiare parola</p>
+            </div>
+        </div>
+    @endforelse
+    {{$announcements->links()}}
 </div>
 </x-layout>
