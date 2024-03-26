@@ -38,12 +38,14 @@
                     <a class="nav-link" href="{{ route('announcements.index') }}">Annunci</a>
                 </li>
                 @if (Auth::check() && Auth::user()->is_revisor)
-                    <li>
-                        <a href="{{ route('revisor.index') }}" class="nav-link">Zona revisore <span>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="text-white nav-link" href="{{ route('revisor.index') }}" class="nav-link">Zona revisore <span>
                                 {{ App\Models\announcement::toBeRevisionedCount() }} <span>unread messages</span>
                             </span>
                         </a>
                     </li>
+                </ul>
                 @endif
             </ul>
 
