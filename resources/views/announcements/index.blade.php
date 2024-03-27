@@ -21,7 +21,7 @@
         <div class="col-12" style="position: absolute;">
             <div>
 
-                <h1 class="text-center mt-5 " style="color: var(--gray-text-color); font-weight:200;">Non ci sono annunci per questa ricerca. Prova a cambiare parola</h1>
+                
 
                 <p class="text-center text-dark ">Non ci sono annunci per questa ricerca. Prova a cambiare parola</p>
 

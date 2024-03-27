@@ -1,9 +1,7 @@
 <form wire:submit.prevent="store" method="POST" enctype="multipart/form-data" class="mt-5 mx-auto col-lg-6">
     @method('PATCH')
     @csrf
-    @if (session()->has('success'))
-        <h2 class="alert alert-success">{{ session('success') }}</h2>
-    @endif
+    <x-success/>
     <h1>Crea il tuo articolo</h1>
     <div class="mb-3">
         <label for="title" class="form-label">Titolo dell'annuncio</label>

@@ -9,7 +9,7 @@
 
 
     <!-- CREA COMPONENTE !-->
-    <div class="d-flex justify-content-center flex-column align-items-center text-center" style="min-height: 90vh">
+    <div class="d-flex justify-content-center flex-column align-items-center text-center" style="min-height: 90vh;">
         <h1 class="fw-bold display-4">Hello, {{Auth::user()->name}}</h1>
         <p class="fw-normal" style="color:var(--gray-text-color)">Want to publish an announcement? Do it here!</p>
         <a class="btn btn-dark" href="{{route('announcements.create')}}">Crea Annuncio</a>
@@ -79,7 +79,7 @@
 
     @endauth
     @guest
-    <div class="d-flex justify-content-center flex-column align-items-center text-center" style="min-height: 90vh">
+    <div class="d-flex justify-content-center flex-column align-items-center text-center" style="min-height: 90vh;">
         <h1 class="fw-bold display-4">The Summer Collection</h1>
         <p class="fw-normal" style="color:var(--gray-text-color)">Introducing our latest collection. Shop the hottest trends in fashion.</p>
         <form action="{{ route('register') }}" method="GET" class="d-flex justify-content-center align-items-center">

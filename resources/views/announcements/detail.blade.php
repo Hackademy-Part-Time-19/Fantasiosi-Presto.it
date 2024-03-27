@@ -26,7 +26,7 @@
         </div>
         <div class="card-body w-50 mt-5" >
 
-            <p class="card-text text-center  " style="color:var(--gray-text-color)">{{ $announcement->body }}</p>
+            <p class="card-text text-center" style="color:var(--gray-text-color);">{{ $announcement->body }}</p>
             <h3 class="card-text text-center">{{ $announcement->price }}€</h3>
             <p class="card-text text-center text-capitalize text-dark">Categoria: {{ $announcement->category->name }}</p>
             <p class="card-footer text-center">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }} da
