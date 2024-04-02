@@ -13,12 +13,16 @@ use Illuminate\Support\Facades\Auth;
 class CreateAnnouncement extends Component
 {
     protected $user_id;
+   #[Validate('required', message: "Inserisci la categoria!")]
     public $category;
-    #[Validate('required')]
+    #[Validate('required', message: "Per favore inserisci il titolo dell'articolo")]
+    #[Validate('min:5', message: "Inserisci un titolo piu' lungo")]
     public $title;
-    #[Validate('required')]
+    #[Validate('required', message: "Per favore inserisci il corpo dell'articolo")]
+    #[Validate('min:5', message: "Inserisci un corpo piu' lungo")]
     public $body;
-    #[Validate('required')]
+    #[Validate('required', message: "Per favore inserisci il prezzo dell'articolo")]
+    #[Validate('decimal:2', message: "Inserisci un prezzo valido")]
     public $price;
 
 
@@ -30,7 +34,7 @@ class CreateAnnouncement extends Component
     }
 
     public function store(User $user)
-    {
+    {   
         $category = Category::find($this->category);
 
         $category->announcements()->create([
