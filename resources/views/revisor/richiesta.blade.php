@@ -49,5 +49,5 @@
         </div>
     </form>
 </div>
-<div class="background-color" style="z-index: 0; position: absolute; width: 100%; height: 50vh; top:25%; background-color: #2b375091"></div>
+<div class="background-color" style="z-index: 0; position: absolute; width: 100%; height: 60vh; top:25%; background-color: #2b375091"></div>
 </x-layout>
