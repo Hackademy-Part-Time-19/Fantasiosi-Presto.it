@@ -39,6 +39,12 @@ function carousel() {
 generateDots(document.getElementsByClassName("card-customer").length);
 carousel();
 
+
+
+
+
+
+
 /* const checkbox = document.getElementById("checkbox");
 
 // Funzione per impostare lo stato dark nel localStorage

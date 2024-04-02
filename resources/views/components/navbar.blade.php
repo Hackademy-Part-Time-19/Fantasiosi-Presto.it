@@ -1,13 +1,15 @@
-<nav class="navbar navbar-expand-lg bg-body-white">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg" style="background-color:var(--primary-color);z-index: 1;">
+    <div class="container-fluid" style="position: relative;">
 
         <div class="d-flex align-items-center">
             <div class="logo-image" style="border-radius: 50%;; max-width: 50px; margin-right: 5px">
             </div>
-            <div style="border-right: 1px solid var(--gray-text-color);">
+            <div style="border-right: 1px solid var(--secondary-color); height:50px; display: flex; align-items: center">
 
-            <a class="navbar-brand me-auto" style="font-weight: 500; text-transform: uppercase; padding-right: 1rem; color:white;" href="{{route('welcome')}}">Presto.it</a>
-        </div>
+                <a class="navbar-brand me-auto"
+                    style="font-weight: 500; text-transform: uppercase; padding-right: 1rem; color:white;"
+                    href="{{ route('welcome') }}">Presto.it</a>
+            </div>
 
 
 
@@ -18,9 +20,8 @@
                 </li>
                 <div class="dropdown show d-flex align-items-center justify-content-center" style="position: relative">
                     <a class="btn dropdown-toggle p-0 px-2 text-center"
-                        style="height:20px; width:100%; font-size: 12px; back-drop-filter: blur(10px);" type="button"
-                        href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
+                        style="width:100%; back-drop-filter: blur(10px);" type="button" href="#" role="button"
+                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Categorie
                     </a>
 
@@ -38,19 +39,42 @@
                     <a class="nav-link" href="{{ route('announcements.index') }}">Annunci</a>
                 </li>
                 @if (Auth::check() && Auth::user()->is_revisor)
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="text-white nav-link" href="{{ route('revisor.index') }}" class="nav-link">Zona revisore <span>
-                                {{ App\Models\announcement::toBeRevisionedCount() }} <span>unread messages</span>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
+                <div class="d-flex align-items-center justify-content-center">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <button type="button" class="button-revisor" >
+                              <a class="text-white nav-link" href="{{ route('revisor.index') }}" class="nav-link">Notifiche Revisore
+                                @if(App\Models\announcement::toBeRevisionedCount() > 0)
+                              <span>
+                                    <span class="badge badge-danger text-danger">{{ App\Models\announcement::toBeRevisionedCount() }} unread messages </span>
+                                </span>
+                                @elseif (App\Models\announcement::toBeRevisionedCount() < 0)
+                                <span>
+                                    <span class="badge badge-danger text-danger">{{ App\Models\announcement::toBeRevisionedCount() }} unread messages </span>
+                                </span>
+                                @endif
+                            </a></button>
+
+
+                        </li>
+                    </ul>
+                </div>
                 @endif
             </ul>
 
         </div>
 
+        <form action="{{ route('announcements.search') }}" method="GET"
+            class="d-flex justify-content-center align-items-center;" style="position:absolute; right:43%;">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+                <g>
+                  <path
+                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                  ></path>
+                </g>
+              </svg>
+              <input class="input" type="search" placeholder="Search" name="searched" />
+        </form>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,13 +96,13 @@
                 @auth
                     <li class="nav-item d-flex  align-items-center">
 
-                        <button class="btn btn-dark px-2 mx-2" style="padding: 0.5px 0px 0.5px 0px; font-size: 12px;"><a
+                        <button class="btn crea-articolo px-2 mx-2" style="padding: 0.5px 0px 0.5px 0px; font-size: 12px;"><a
                                 style="text-decoration: none; color:white;" href="{{ route('announcements.create') }}">Crea
                                 Articolo</a></button>
                     </li>
                     <form action="/logout" method="POST" style="display: flex; align-items: center">
                         @csrf
-                        <button class="btn btn-dark px-2 mx-2"
+                        <button class="btn Logout px-2 mx-2"
                             style="padding: 0.5px 0px 0.5px 0px; font-size: 12px">Logout</button>
                     </form>
 
@@ -93,10 +117,7 @@
                 @endguest
 
             </ul>
-            <form action="{{route('announcements.search')}}" method="GET" class="d-flex justify-content-center align-items-center" >
-                <input name="searched" type="search" placeholder="Search" style="border-radius: 5px; margin-right: 5px  ">
-                <button type="submit" class="btn btn-dark px-2 py-1" style="font-size:12px;" >Search</button>
-            </form>
+
 
         </div>
     </div>

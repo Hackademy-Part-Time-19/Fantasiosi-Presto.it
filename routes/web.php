@@ -21,7 +21,7 @@ Route::get('/',[FrontController::class, 'welcome'])->name('welcome');
 
 
 
-//Rotta Category 
+//Rotta Category
 Route::get('/category/announcement/{category}',[FrontController::class,'categoryShow'])->name('category.show');
 
 
@@ -32,7 +32,7 @@ Route::resource('announcements', AnnouncementsController::class);
 Route::middleware(['auth'])->group(function () {
     Route::get('/announcement/{announcement}',[FrontController::class,'show'])->name('announcement.show');
     Route::resource('announcements', AnnouncementsController::class)->only('create');
-   
+
 });
 
 
