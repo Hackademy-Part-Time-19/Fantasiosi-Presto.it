@@ -67,3 +67,9 @@ Route::post('invio/mail', [MailController::class, 'sendMail'])->name('send.mail'
 //RICERCA ANNUNCIO
 
 Route::get('/ricerca/annuncio',[FrontController::class,'searchAnnouncements'])->name('announcements.search');
+
+Route::post('/lingua/{lang}', [FrontController::class, 'setLanguage'])->name('set_language_locale');
+
+Route::middleware(['SetLocaleLang'])->group(function(){
+    Route::get('/',[FrontController::class, 'welcome'])->name('welcome');
+});

@@ -24,12 +24,12 @@
 
 
 
-                    <div style="display: flex; justify-content: space-between">
-                        <button class="btn button-request px-2 mx-2"
+                    <div style="display: flex; justify-content:center; align-items:center">
+                        {{--<button class="btn button-request px-2 mx-2"
                             style="padding: 0.5px 0px 0.5px 0px; font-size: 20px;background-color:#fca311">
                             <span>Previous</span>
-                        </button>
-                        <div style="display: flex">
+                        </button>--}}
+                        <div class="d-flex align-items-center justify-content-center">
                             <form action="{{ route('revisor.accept', ['announcement' => $announcement_to_check]) }}"
                                 method="POST">
                                 @csrf
@@ -49,10 +49,10 @@
 
                             </form>
                         </div>
-                        <button class="btn button-request px-2 mx-2"
+                        {{--<button class="btn button-request px-2 mx-2"
                             style="padding: 0.5px 0px 0.5px 0px; font-size: 20px ;background-color:#fca311">
                             <span>Next</span>
-                        </button>
+                        </button>--}}
                     </div>
                 </div>
 
