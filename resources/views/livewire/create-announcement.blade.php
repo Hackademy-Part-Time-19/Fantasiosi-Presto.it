@@ -51,22 +51,23 @@
             <div><span class="text-danger">{{ $message }}</span></div>
         @enderror
     </div>
-   
-    
+
+
     @if (!empty($images))
-    <div class="col-12">
-        <div class="row">
+    <div class="col-12" >
+        <div class="row" style="border: 2px solid var(--secondary-color); border-radius: 10px; padding: 10px;background: linear-gradient(317deg, rgba(252, 163, 17, 1) 0%, rgba(252, 163, 17, 1) 15%, rgba(20, 33, 61, 1) 51%, rgba(20, 33, 61, 1) 100%);">
             @foreach ($images as $key => $image)
-                <div class="col-3">
-                    <img src="{{ $image->temporaryUrl() }}" alt="">
-                    <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger w-100 mt-2">X</button>
+                <div class="col-3" >
+                    <img src="{{ $image->temporaryUrl() }}" class="img-fluid" style="height: 100px; width: 140px; max-height: 100px; max-width: 140px; margin-top: 10px" alt="">
+                    <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger w-100 mt-2" style="width: 100%">X</button>
                 </div>
+
             @endforeach
         </div>
     </div>
-        
-    @endif 
-    <div class="row align-items-center justify-content-center">
-        <button type="submit" class="btn btn-primary w-25">Salva</button>
+
+    @endif
+    <div class="row align-items-center justify-content-center ">
+        <button type="submit" class="btn btn-primary w-25 mt-2">Salva</button>
     </div>
 </form>

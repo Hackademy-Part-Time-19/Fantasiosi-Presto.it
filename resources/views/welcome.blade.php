@@ -58,8 +58,8 @@
     <div class="Testimonials d-flex justify-content-center flex-column align-items-center text-center" style="z-index: 1">
         <h1 style="margin-top: 5rem; z-index: 1; font-weight:700; font-size: 3rem; margin-top:13%;" data-aos="fade-down" data-aos-duration="1000">Customer Testimonials</h1>
         <p class="fw-normal" style="color:var(--paragraph-color); z-index: 1; font-size:20px;width:35%; margin-top:0rem; margin-bottom: 5rem" data-aos="fade-right" data-aos-duration="1000">Non sei sicuro di essere pronto per acquistare sul nostro sito? Guarda che cosa hanno da dire le recensioni fatte dagli utenti!</p>
-        <div class="slideshow d-flex flex-row" style="width:25%;" data-aos="fade-down" data-aos-duration="1000">
-        <div class="card-customer flex-row ">
+        <div class="slideshow d-flex flex-row" style="width:25%; z-index: 1" data-aos="fade-down" data-aos-duration="1000">
+        <div class="card-customer flex-row">
             <div class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
             <img class="img-customer img-fluid" height="100" width="100" style="border-radius: 10px" src="{{Storage::url('immagini/Nuovo_progetto_1.jpg') }}" alt="">
             <h2>Fabiano</h2>
@@ -70,7 +70,7 @@
         </div>
         </div>
 
-    <div class="card-customer flex-row ">
+    <div class="card-customer flex-row " style="z-index: 1">
         <div class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
         <img class="img-customer img-fluid" height="150" width="150" style="border-radius: 10px" src="{{Storage::url('immagini/Nuovo_progetto_1.jpg')}}" alt="">
         <h2>Gabriele</h2>
@@ -180,7 +180,7 @@
 <div class="Testimonials d-flex justify-content-center flex-column align-items-center text-center" style="z-index: 1">
     <h1 style="margin-top: 5rem; z-index: 1; font-weight:700; font-size: 3rem; margin-top:13%;" data-aos="fade-down" data-aos-duration="1000">Customer Testimonials</h1>
     <p class="fw-normal" style="color:var(--paragraph-color); z-index: 1; font-size:20px;width:35%; margin-top:0rem; margin-bottom: 5rem" data-aos="fade-right" data-aos-duration="1000">Non sei sicuro di essere pronto per acquistare sul nostro sito? Guarda che cosa hanno da dire le recensioni fatte dagli utenti!</p>
-    <div class="slideshow d-flex flex-row" style="width:25%;" data-aos="fade-down" data-aos-duration="1000">
+    <div class="slideshow d-flex flex-row" style="width:25%; z-index: 1" data-aos="fade-down" data-aos-duration="1000">
     <div class="card-customer flex-row ">
         <div class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
         <img class="img-customer img-fluid" height="100" width="100" style="border-radius: 10px" src="{{Storage::url('immagini/Nuovo_progetto_1.jpg') }}" alt="">

@@ -5,6 +5,7 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnouncementsController;
+use App\Http\Middleware\SetLocaleLang;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,6 @@ Route::get('/ricerca/annuncio',[FrontController::class,'searchAnnouncements'])->
 
 Route::post('/lingua/{lang}', [FrontController::class, 'setLanguage'])->name('set_language_locale');
 
-Route::middleware(['SetLocaleLang'])->group(function(){
+/* Route::middleware(['SetLocaleLang'])->group(function(){
     Route::get('/',[FrontController::class, 'welcome'])->name('welcome');
-});
+}); */
