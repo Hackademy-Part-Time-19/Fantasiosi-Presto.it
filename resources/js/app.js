@@ -1,6 +1,7 @@
 import './bootstrap';
 import 'bootstrap';
 
+
 var myIndex = 0;
 var dotsContainer = document.querySelector(".dots");
 

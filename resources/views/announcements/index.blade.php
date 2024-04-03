@@ -46,7 +46,7 @@
             <h1 class="text-center mt-5 " style="color: var(--gray-text-color); font-weight:200;">Non ci sono annunci
             </h1>
         @elseif (count($announcements) > 0)
-        <h1>Esplora annunci:</h1>
+        <h1>{{__("ui.allAnnouncements")}}</h1>
         <br>
         @endif
             <div class="d-flex flex-wrap justify-content-center gap-3">
