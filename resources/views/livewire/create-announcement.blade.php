@@ -45,6 +45,27 @@
         @enderror
 
     </div>
+    <div class="mb-3">
+        <input type="file" wire:model="temporary_images" multiple name="images" class="form-control shadow @error('temporary_images') is-invalid @enderror" id="images">
+        @error('temporary_images')
+            <div><span class="text-danger">{{ $message }}</span></div>
+        @enderror
+    </div>
+   
+    
+    @if (!empty($images))
+    <div class="col-12">
+        <div class="row">
+            @foreach ($images as $key => $image)
+                <div class="col-3">
+                    <img src="{{ $image->temporaryUrl() }}" alt="">
+                    <button type="button" wire:click="removeImage({{ $key }})" class="btn btn-danger w-100 mt-2">X</button>
+                </div>
+            @endforeach
+        </div>
+    </div>
+        
+    @endif 
     <div class="row align-items-center justify-content-center">
         <button type="submit" class="btn btn-primary w-25">Salva</button>
     </div>
