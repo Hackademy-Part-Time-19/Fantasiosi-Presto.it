@@ -22,7 +22,7 @@
                     <a class="btn dropdown-toggle p-0 px-2 text-center"
                         style="width:100%; back-drop-filter: blur(10px);" type="button" href="#" role="button"
                         id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorie
+                        {{ __('ui.navCategories') }}
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="position: absolute; top: 100%">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('announcements.index') }}">Annunci</a>
+                    <a class="nav-link" href="{{ route('announcements.index') }}">{{ __('ui.navAnnouncements') }}</a>
                 </li>
                 @if (Auth::check() && Auth::user()->is_revisor)
                     <div class="d-flex align-items-center justify-content-center">
@@ -44,21 +44,22 @@
                             <li class="nav-item">
                                 <button type="button" class="button-revisor">
                                     <a class="text-white nav-link" href="{{ route('revisor.index') }}"
-                                        class="nav-link">Notifiche Revisore
-                                        @if (App\Models\announcement::toBeRevisionedCount() > 0)
-                                            <span>
-                                                <span
-                                                    class="badge badge-danger text-danger">{{ App\Models\announcement::toBeRevisionedCount() }}
-                                                    unread messages </span>
-                                            </span>
-                                        @elseif (App\Models\announcement::toBeRevisionedCount() < 0)
-                                            <span>
-                                                <span
-                                                    class="badge badge-danger text-danger">{{ App\Models\announcement::toBeRevisionedCount() }}
-                                                    unread messages </span>
-                                            </span>
-                                        @endif
-                                    </a></button>
+                                        class="nav-link">{{ __('ui.navRevisor') }}</a>
+                                    @if (App\Models\announcement::toBeRevisionedCount() > 0)
+                                        <span>
+                                            <span
+                                                class="badge badge-danger text-danger">{{ App\Models\announcement::toBeRevisionedCount() }}
+                                                unread messages </span>
+                                        </span>
+                                    @elseif (App\Models\announcement::toBeRevisionedCount() < 0)
+                                        <span>
+                                            <span
+                                                class="badge badge-danger text-danger">{{ App\Models\announcement::toBeRevisionedCount() }}
+                                                unread messages </span>
+                                        </span>
+                                    @endif
+                                    </a>
+                                </button>
 
 
                             </li>
@@ -100,13 +101,16 @@
                     <a class="btn dropdown-toggle p-0 px-2 text-center"
                         style="width:100%; back-drop-filter: blur(10px);" type="button" href="#" role="button"
                         id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Lingua
+                        {{ __('ui.navLang') }}
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="position: absolute; top: 100%">
-                        <x-locale lang1='it' style="width:30px"><x-flag-country-it style=" width:30px;"/></x-locale>
-                        <x-locale lang1='es' style="width:30px"><x-flag-country-es style=" width:30px;"/></x-locale>
-                        <x-locale lang1='gb' style="width:30px"><x-flag-country-gb style=" width:30px;"/></x-locale>
+                        <x-locale lang1='it' style="width:30px"><x-flag-country-it
+                                style=" width:30px;" /></x-locale>
+                        <x-locale lang1='es' style="width:30px"><x-flag-country-es
+                                style=" width:30px;" /></x-locale>
+                        <x-locale lang1='gb' style="width:30px"><x-flag-country-gb
+                                style=" width:30px;" /></x-locale>
                     </div>
                 </div>
 
@@ -116,23 +120,22 @@
                         <button class="btn crea-articolo px-2 mx-2"
                             style="padding: 0.5px 0px 0.5px 0px; font-size: 12px;"><a
                                 style="text-decoration: none; color:white;"
-                                href="{{ route('announcements.create') }}">Crea
-                                Articolo</a></button>
+                                href="{{ route('announcements.create') }}">{{__('ui.navMakeAnnouncement')}}</a></button>
                     </li>
                     <form action="/logout" method="POST" style="display: flex; align-items: center">
                         @csrf
                         <button class="btn Logout px-2 mx-2"
-                            style="padding: 0.5px 0px 0.5px 0px; font-size: 12px">Logout</button>
+                            style="padding: 0.5px 0px 0.5px 0px; font-size: 12px">{{ __('ui.logout') }}</button>
                     </form>
 
                 @endauth
 
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="/register">Registrati</a>
+                        <a class="nav-link" href="/register">{{ __('ui.register') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">Accedi</a>
+                        <a class="nav-link" href="/login">{{ __('ui.login') }}</a>
                     </li>
                 @endguest
 
