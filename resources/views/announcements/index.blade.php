@@ -61,7 +61,7 @@
         @empty
             <div class="col-12" style="position: absolute;">
                 <div>
-                    <p class="text-center text-dark ">Non ci sono annunci per questa ricerca. Prova a cambiare parola
+                    <p class="text-center text-dark ">Non ci sono annunci per questa ricerca.
                     </p>
                 </div>
             </div>
