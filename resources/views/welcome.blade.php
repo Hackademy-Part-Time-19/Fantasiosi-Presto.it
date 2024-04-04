@@ -32,7 +32,7 @@
         <div class="Featured-product" style="position: relative; z-index: 1; border:1px solid red">
             <div class="title-product" style="margin-bottom: 6rem" data-aos="fade-down" data-aos-duration="1000">
             <h1 style="z-index: 1">Featured Product</h1>
-            <p style="z-index: 1">Questi sono gli ultimi annunci inseriti nel nostro catalogo! Perchè non provi a dare un occhiata?</p>
+            <p style="z-index: 1">{{__('ui.featured')}}</p>
         </div>
         <div class="row">
         @foreach ($announcements as $announcement)
@@ -59,7 +59,7 @@
 
     <div class="Testimonials d-flex justify-content-center flex-column align-items-center text-center" style="z-index: 1">
         <h1 style="margin-top: 5rem; z-index: 1; font-weight:700; font-size: 3rem; margin-top:13%;" data-aos="fade-down" data-aos-duration="1000">Customer Testimonials</h1>
-        <p class="fw-normal" style="color:var(--paragraph-color); z-index: 1; font-size:20px;width:35%; margin-top:0rem; margin-bottom: 5rem" data-aos="fade-right" data-aos-duration="1000">Non sei sicuro di essere pronto per acquistare sul nostro sito? Guarda che cosa hanno da dire le recensioni fatte dagli utenti!</p>
+        <p class="fw-normal" style="color:var(--paragraph-color); z-index: 1; font-size:20px;width:35%; margin-top:0rem; margin-bottom: 5rem" data-aos="fade-right" data-aos-duration="1000">{{__('ui.testimonials')}}</p>
         <div class="slideshow d-flex flex-row" style="width:25%; z-index: 1" data-aos="fade-down" data-aos-duration="1000">
         <div class="card-customer flex-row">
             <div class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
@@ -131,7 +131,7 @@
                     data-aos="zoom-out-right" data-aos-duration="1000">
 
             <div class="button-launch container d-flex justify-content-start align-items-start flex-column">
-                <h1>Benvenuti sul nostro amichevole sito di Presto.it</h1>
+                <h1>{{__('ui.welcome')}}</h1>
             <button id="button-primary" class="button-primary">
                 <svg
                   height="24"
@@ -145,7 +145,7 @@
                     fill="currentColor"
                   ></path>
                 </svg>
-                <span>Accedi</span>
+                <span>{{__('ui.login')}}</span>
               </button>
         </div>
     </div>
@@ -162,7 +162,7 @@
     <div class="Featured-product" style="position: relative; z-index: 1">
         <div class="title-product" style="margin-bottom: 6rem" data-aos="fade-down" data-aos-duration="1000">
         <h1 style="z-index: 1">Featured Product</h1>
-        <p style="z-index: 1">Questi sono gli ultimi annunci inseriti nel nostro catalogo! Perchè non provi a dare un occhiata?</p>
+        <p style="z-index: 1">{{__('ui.featured')}}</p>
     </div>
     <div class="row">
         @foreach ($announcements as $announcement)
@@ -189,7 +189,7 @@
 
 <div class="Testimonials d-flex justify-content-center flex-column align-items-center text-center" style="z-index: 1">
     <h1 style="margin-top: 5rem; z-index: 1; font-weight:700; font-size: 3rem; margin-top:13%;" data-aos="fade-down" data-aos-duration="1000">Customer Testimonials</h1>
-    <p class="fw-normal" style="color:var(--paragraph-color); z-index: 1; font-size:20px;width:35%; margin-top:0rem; margin-bottom: 5rem" data-aos="fade-right" data-aos-duration="1000">Non sei sicuro di essere pronto per acquistare sul nostro sito? Guarda che cosa hanno da dire le recensioni fatte dagli utenti!</p>
+    <p class="fw-normal" style="color:var(--paragraph-color); z-index: 1; font-size:20px;width:35%; margin-top:0rem; margin-bottom: 5rem" data-aos="fade-right" data-aos-duration="1000">{{__('ui.testimonials')}}</p>
     <div class="slideshow d-flex flex-row" style="width:25%; z-index: 1" data-aos="fade-down" data-aos-duration="1000">
     <div class="card-customer flex-row ">
         <div class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
