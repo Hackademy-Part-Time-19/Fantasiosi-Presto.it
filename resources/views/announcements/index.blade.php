@@ -52,7 +52,7 @@
             <div class="d-flex flex-wrap justify-content-center gap-3">
         @forelse ($announcements as $announcement)
 
-            <x-card :user="$announcement->user" :title="$announcement->title" :body="$announcement->body" :price="$announcement->price" :category="$announcement->category"
+            <x-card :user="$announcement->user" :image="count($announcement->images) > 0 ?  Storage::url($announcement->images->first()->path) : ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYscfUBUbqwGd_DHVhG-ZjCOD7MUpxp4uhNe7toUg4ug&s')" :title="$announcement->title" :body="$announcement->body" :price="$announcement->price" :category="$announcement->category"
                 :created="$announcement->created_at">
                 <a href="{{ route('announcement.show', compact('announcement')) }}" class="btn"
                     style="background-color: var(--secondary-color);">Vai al dettaglio</a>
