@@ -2,9 +2,9 @@
     @method('PATCH')
     @csrf
     <x-success />
-    <h1>Crea il tuo articolo</h1>
+    <h1>{{__('formAnnouncement.main')}}</h1>
     <div class="mb-3">
-        <label for="title" class="form-label">Titolo dell'annuncio</label>
+        <label for="title" class="form-label">{{__('formAnnouncement.title')}}</label>
         <input type="text" name="title" wire:model.live.debounce.400ms="title" class="form-control" id="title"
             value="{{ old('title') }}">
 
@@ -13,7 +13,7 @@
         @enderror
     </div>
     <div class="mb-3">
-        <label for="body" class="form-label">Corpo dell'annuncio</label>
+        <label for="body" class="form-label">{{__('formAnnouncement.body')}}</label>
         <textarea type="text" name="body" wire:model.live.debounce.400ms="body" class="form-control" id="body"
             value="{{ old('body') }}"></textarea>
 
@@ -22,7 +22,7 @@
         @enderror
     </div>
     <div class="mb-3">
-        <label for="price" class="form-label">Prezzo</label>
+        <label for="price" class="form-label">{{__('formAnnouncement.price')}}</label>
         <input type="text" name="price" wire:model.live.debounce.400ms="price" class="form-control" id="price"
             value="{{ old('price') }}">
         @error('price')
@@ -30,11 +30,11 @@
         @enderror
     </div>
     <div class="mb-3">
-        <label for="categories" class="form-label">Categorie</label>
+        <label for="categories" class="form-label">{{__('formAnnouncement.categories')}}</label>
 
         <select class="form-select mb-3 text-capitalize" aria-label="Categorie"
             wire:model.live.debounce.400ms="category">
-            <option selected value="">--Seleziona categoria--</option>
+            <option selected value="">{{__('formAnnouncement.selected')}}</option>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
@@ -68,6 +68,6 @@
 
     @endif
     <div class="row align-items-center justify-content-center ">
-        <button type="submit" class="btn btn-primary w-25 mt-2">Salva</button>
+        <button type="submit" class="btn btn-primary w-25 mt-2">{{__('formAnnouncement.save')}}</button>
     </div>
 </form>
