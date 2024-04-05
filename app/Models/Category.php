@@ -11,6 +11,7 @@ class Category extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'nationality',
     ];
 
     public function announcements(){
