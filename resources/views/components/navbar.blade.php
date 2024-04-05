@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg" style="background-color:var(--primary-color);z-index: 1;">
     <div class="container-fluid" style="position: relative;">
 
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center w-100">
             <div class="logo-image" style="border-radius: 50%;; max-width: 50px; margin-right: 5px">
             </div>
             <div style="border-right: 1px solid var(--secondary-color); height:50px; display: flex; align-items: center">
@@ -14,7 +14,7 @@
 
 
 
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav d-flex align-items-center justify-content-center me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ route('welcome') }}">Home</a>
@@ -41,29 +41,20 @@
                 </li>
                 @if (Auth::check() && Auth::user()->is_revisor)
                     <div class="d-flex align-items-center justify-content-center">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <button type="button" class="button-revisor">
-                                    <a class="text-white nav-link" href="{{ route('revisor.index') }}"
-                                        class="nav-link">{{ __('ui.navRevisor') }}</a>
+                        <ul class="d-flex align-items-center justify-content-center">
+                            <a href="{{ route('revisor.index') }}" class="nav-link" style="color:var(--third-color); list-style: none; cursor: pointer">
+                                {{ __('ui.navRevisor') }}
                                     @if (App\Models\announcement::toBeRevisionedCount() > 0)
-                                        <span>
                                             <span
                                                 class="badge badge-danger text-danger">{{ App\Models\announcement::toBeRevisionedCount() }}
                                                 unread messages </span>
-                                        </span>
                                     @elseif (App\Models\announcement::toBeRevisionedCount() < 0)
-                                        <span>
                                             <span
                                                 class="badge badge-danger text-danger">{{ App\Models\announcement::toBeRevisionedCount() }}
                                                 unread messages </span>
                                         </span>
                                     @endif
                                     </a>
-                                </button>
-
-
-                            </li>
                         </ul>
                     </div>
                 @endif

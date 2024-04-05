@@ -13,6 +13,7 @@ class RevisorController extends Controller
 {
     public function index(){
 
+
         $announcement_to_check=Announcement::where('is_accepted', null)->first();
 
         return view('revisor.index',compact('announcement_to_check'));
@@ -25,6 +26,6 @@ class RevisorController extends Controller
         $announcement->setAccepted(false);
         return redirect()->back()->with('message','complimenti, hai rifiutato l\' annuncio');
     }
-    
-    
+
+
 }
