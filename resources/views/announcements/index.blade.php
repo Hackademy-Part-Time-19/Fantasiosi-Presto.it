@@ -1,9 +1,8 @@
 <x-layout>
     <div class="container d-flex flex-column align-items-center mt-2"
         style="padding: 10px; height: 40vh; background-color: var(--primary-color); position:relative; border-radius: 10px; border: 2px solid var(--secondary-color); box-shadow: 0 0 0 5px rgb(247 127 0 / 10%);">
-        <h1 class="text-center mt-5" style="color: var(--third-color);">Annunci</h1>
-        <p style="margin-top: 0px; color: var(--paragraph-color)">Cerca qui nel nostro catalogo gli annunci che vorresti
-            vedere!</p>
+        <h1 class="text-center mt-5" style="color: var(--third-color);">{{__('uiAnnoun.title')}}</h1>
+        <p style="margin-top: 0px; color: var(--paragraph-color)">{{__('uiAnnoun.main')}}</p>
 
         <form action="{{ route('announcements.search') }}" method="GET"
             class="d-flex justify-content-center align-items-center; mt-5" style="position:absolute; right:40%; top:40%">
@@ -26,7 +25,7 @@
             <a class="btn dropdown-toggle p-0 px-2 text-center" style="; back-drop-filter: blur(10px);" type="button"
                 href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
-                Categorie
+                {{__('uiAnnoun.categories')}}
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="position: absolute; top: 100%">
@@ -43,7 +42,7 @@
 
     <div class="container d-flex flex-column flex-wrap justify-content-center align-items-center gap-3" style="min-height:68vh; position:relative">
         @if (count($announcements) == 0)
-            <h1 class="text-center mt-5 " style="color: var(--gray-text-color); font-weight:200;">Non ci sono annunci
+            <h1 class="text-center mt-5 " style="color: var(--gray-text-color); font-weight:200;">{{__('uiAnnoun.none')}}
             </h1>
         @elseif (count($announcements) > 0)
         <h1>{{__("ui.allAnnouncements")}}</h1>
@@ -55,13 +54,13 @@
             <x-card :user="$announcement->user" :image="count($announcement->images) > 0 ?  Storage::url($announcement->images->first()->path) : ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYscfUBUbqwGd_DHVhG-ZjCOD7MUpxp4uhNe7toUg4ug&s')" :title="$announcement->title" :body="$announcement->body" :price="$announcement->price" :category="$announcement->category"
                 :created="$announcement->created_at">
                 <a href="{{ route('announcement.show', compact('announcement')) }}" class="btn"
-                    style="background-color: var(--secondary-color);">Vai al dettaglio</a>
+                    style="background-color: var(--secondary-color);">{{__('uiAnnoun.detail')}}</a>
 
             </x-card>
         @empty
             <div class="col-12" style="position: absolute;">
                 <div>
-                    <p class="text-center text-dark ">Non ci sono annunci per questa ricerca.
+                    <p class="text-center text-dark ">{{__('uiAnnoun.research')}}
                     </p>
                 </div>
             </div>
