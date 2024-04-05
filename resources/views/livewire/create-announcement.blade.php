@@ -51,8 +51,8 @@
             <div><span class="text-danger">{{ $message }}</span></div>
         @enderror
     </div>
-   
-    
+
+
     @if (!empty($images))
     <div class="col-12" >
         <div class="row" style="border: 2px solid var(--secondary-color); border-radius: 10px; padding: 10px;background: linear-gradient(317deg, rgba(252, 163, 17, 1) 0%, rgba(252, 163, 17, 1) 15%, rgba(20, 33, 61, 1) 51%, rgba(20, 33, 61, 1) 100%);">

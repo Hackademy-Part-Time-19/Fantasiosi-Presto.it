@@ -4,7 +4,7 @@
                     <section style="border-bottom: 2px solid var(--secondary-color); background-color: var(--primary-color);">
                         <div class="d-flex justify-content-center align-items-center" style="min-height:75vh;">
                             <div class="left-side d-flex justify-content-center align-items-center flex-column" style=" width: 50%;"
-                       
+
                         data-aos="zoom-in" data-aos-duration="1000">
 
                         <div class="button-launch container d-flex justify-content-start align-items-start flex-column">
