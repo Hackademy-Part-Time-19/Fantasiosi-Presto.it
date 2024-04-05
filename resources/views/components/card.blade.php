@@ -1,6 +1,6 @@
 
   <div class="card text-center d-flex flex-column" style="width: 18rem; max-height: 25rem; min-height: 25rem; height: 25rem; padding: 5px; background-color: var(--primary-color)">
-    <img class="card-img-top" width="100%" style="border: 1px solid black"  src="{{Storage::url('immagini/Nuovoprogetto.png')}}" alt="Card image cap">
+    <img class="card-img-top img-fluid" style="border: 1px solid black;width: 300px;height: 200px;object-fit: contain"  src="{{$image}}" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title" style="color: var(--third-color)"> {{ Str::limit($title, 20)}}</h5>
         <p class="card-text mb-0" style="color: var(--paragraph-color); font-weight:300; font-size: 12px;">{{ Str::limit($body, 40) }}</p>

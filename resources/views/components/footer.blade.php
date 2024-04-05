@@ -16,7 +16,7 @@
         @auth
         <ul class="d-flex align-items-center">
                 <li style="list-style: none">
-                    <a href="{{ route('revisor.form') }}" class="nav-link">Lavora con noi</a>
+                    <a href="{{ route('revisor.form') }}" class="nav-link">{{__('ui.footerWork')}}</a>
                 </li>
         </ul>
         @endauth

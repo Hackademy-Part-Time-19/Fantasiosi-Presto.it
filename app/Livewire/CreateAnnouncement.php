@@ -16,16 +16,16 @@ class CreateAnnouncement extends Component
 {
     use WithFileUploads;
     protected $user_id;
-    #[Validate('required', message: "Inserisci la categoria!")]
+    #[Validate('required')]
     public $category;
-    #[Validate('required', message: "Per favore inserisci il titolo dell'articolo")]
-    #[Validate('min:5', message: "Inserisci un titolo piu' lungo")]
+    #[Validate('required')]
+    #[Validate('min:5')]
     public $title;
-    #[Validate('required', message: "Per favore inserisci il corpo dell'articolo")]
-    #[Validate('min:5', message: "Inserisci un corpo piu' lungo")]
+    #[Validate('required')]
+    #[Validate('min:5')]
     public $body;
-    #[Validate('required', message: "Per favore inserisci il prezzo dell'articolo")]
-    #[Validate('decimal:2', message: "Inserisci un prezzo valido")]
+    #[Validate('required')]
+    #[Validate('decimal:2')]
     public $price;
 
     public $temporary_images;
@@ -42,6 +42,13 @@ class CreateAnnouncement extends Component
         'temporary_images.max' => 'Il file non può superare i 1 mb.',
         'images.image' => 'Il file deve essere un immagine.',
         'images.max' => 'Il file non può superare i 1 mb.',
+        'category' => 'Inserisci una categoria!',
+        'title' => "Per favore inserisci il titolo dell' articolo",
+        'body' => "Per favore inserisci il corpo dell' articolo",
+        'price' => "Per favore inserisci il prezzo dell' articolo",
+        'title.min' => "Il titolo deve essere piu' lungo",
+        'body.min' => "Il corpo deve essere piu' lungo",
+        'price.decimal' => "Inserisci un prezzo valido",
     ];
 
 
@@ -95,7 +102,12 @@ class CreateAnnouncement extends Component
     }
 
     public function cleanForm(){
-        $this->reset();
+        $this->title = '';
+        $this->body = '';
+        $this->price = '';
+        $this->temporary_images = [];
+        $this->images = [];
+        $this->category = '';
     }
 
     public function removeImage($key)
