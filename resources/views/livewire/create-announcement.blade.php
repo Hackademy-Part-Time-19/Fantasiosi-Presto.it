@@ -35,15 +35,19 @@
         <select class="form-select mb-3 text-capitalize" aria-label="Categorie"
             wire:model.live.debounce.400ms="category">
             <option selected value="">{{ __('formAnnouncement.selected') }}</option>
-            @foreach ($categories as $category)
-                
-                @if ($category->nationality == 'gb')
-                    
-                
+                @if (config('app.locale') == 'gb')
+                    @foreach ($categories->where('nationality', 'gb') as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
-                
-                @endif
+                @endforeach
+                @elseif (config('app.locale') == 'it')
+                @foreach ($categories->where('nationality', 'it') as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
+                @elseif (config('app.locale') == 'es')
+                @foreach ($categories->where('nationality', 'es') as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+                @endif
 
         </select>
         @error('category')

@@ -27,11 +27,20 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="position: absolute; top: 100%">
-                        @foreach ($categories as $category)
-                            <a class="dropdown-item" href="{{ route('category.show', compact('category')) }}"
-                                style="text-transform: capitalize">{{ $category->name }}</a>
-                        @endforeach
 
+                        @if (config('app.locale') == 'gb')
+                        @foreach ($categories->where('nationality', 'gb') as $category)
+                        <a class="dropdown-item" href="{{ route('category.show', compact('category')) }}" style="text-transform: capitalize">{{ $category->name }}</a>
+                    @endforeach
+                    @elseif (config('app.locale') == 'it')
+                    @foreach ($categories->where('nationality', 'it') as $category)
+                    <a class="dropdown-item" href="{{ route('category.show', compact('category')) }}" style="text-transform: capitalize">{{ $category->name }}</a>
+                @endforeach
+                    @elseif (config('app.locale') == 'es')
+                    @foreach ($categories->where('nationality', 'es') as $category)
+                    <a class="dropdown-item" href="{{ route('category.show', compact('category')) }}" style="text-transform: capitalize">{{ $category->name }}</a>
+                @endforeach
+                    @endif
 
 
                     </div>
