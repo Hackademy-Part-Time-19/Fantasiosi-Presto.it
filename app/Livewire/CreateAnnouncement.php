@@ -30,7 +30,7 @@ class CreateAnnouncement extends Component
 
     public $temporary_images;
     public $images = [];
-   
+
 
     protected $rules = [
         'temporary_images.*' => 'image|max:1024',
@@ -48,7 +48,7 @@ class CreateAnnouncement extends Component
 
     public function render()
     {
-        $categories = Category::all();
+
         return view('livewire.create-announcement');
     }
 
@@ -56,7 +56,7 @@ class CreateAnnouncement extends Component
     {
         $this->validate();
         $category = Category::find($this->category);
-        
+
 
 
 
@@ -69,7 +69,7 @@ class CreateAnnouncement extends Component
         if (count($this->images)){
             foreach ($this->images as $image){
                 $directory = 'announcements/'.$announcement->id;
-               
+
                 $announcement->images()->create([
                     'path' => $image->store($directory, 'public'),
                 ]);
@@ -77,7 +77,7 @@ class CreateAnnouncement extends Component
         }
         File::deleteDirectory(storage_path('app/livewire-tmp'));
 
-$this->cleanForm();
+ $this->cleanForm();
         session()->flash('success', 'Annuncio caricato con successo');
     }
     public function updatedTemporaryImages()
@@ -91,7 +91,7 @@ $this->cleanForm();
 
     public function updated($property){
         $this->validateOnly($property);
-        
+
     }
 
     public function cleanForm(){
