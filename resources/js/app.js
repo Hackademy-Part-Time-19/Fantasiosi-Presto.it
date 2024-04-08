@@ -44,8 +44,6 @@ carousel();
 
 
 
-
-
 /* const checkbox = document.getElementById("checkbox");
 
 // Funzione per impostare lo stato dark nel localStorage
