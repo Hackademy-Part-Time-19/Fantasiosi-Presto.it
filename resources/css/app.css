@@ -132,6 +132,10 @@ nav{
     transform: scale(0.9);
 }
 
+.navRight{
+  width:135px !important;
+}
+
 .Logout{
     color: var(--fifth-color);
     border: 1px solid var(--secondary-color);
