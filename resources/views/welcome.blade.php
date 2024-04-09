@@ -39,8 +39,12 @@
             <div class="cards m-1 d-flex  flex-row gap-5 " style="z-index: 1; width: 100%; border: 2px solid var(--secondary-color);" data-aos="fade-up" data-aos-duration="1000">
 
                                 <div class="card-product d-flex flex-column text-center">
-                                    <img class="img-fluid" height="300" width="371"
-                                        src="{{ Storage::url('immagini/Nuovoprogetto.png') }}" alt="">
+                                   {{--  <--! PHP ARTISAN QUEUE:WORK --> --}}
+                                    @if (count($announcement->images) > 0)
+                                    <img class="img-fluid" height="300" width="371" src="{{'storage/'.$announcement->images->first()->path }}" alt="">
+                                    @else
+                                    <img class="img-fluid" height="300" width="371" src="{{ Storage::url('immagini/Nuovoprogetto.png') }}" alt="">
+                                    @endif
                                     <h5 style="width:100%; margin-top: 1rem">{{ Str::limit($announcement->title, 34) }}</h5>
                                     <p style="width: 100%; color:var(--paragraph-color)">
                                         {{ Str::limit($announcement->body, 100) }} <a
