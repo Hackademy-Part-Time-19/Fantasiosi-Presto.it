@@ -98,7 +98,7 @@
                         <span class="ball"></span>
                     </label>
                 </div>
-                <div class="dropdown show d-flex align-items-center justify-content-center" style="position: relative">
+                <div class="dropdown show d-flex align-items-center justify-content-center navRight" style="position: relative">
                     <a class="btn dropdown-toggle p-0 px-2 text-center"
                         style="width:100%; back-drop-filter: blur(10px);" type="button" href="#" role="button"
                         id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -116,26 +116,26 @@
                 </div>
 
                 @auth
-                    <li class="nav-item d-flex  align-items-center">
+                    <li class="nav-item d-flex  align-items-center ">
 
-                        <button class="btn crea-articolo px-2 mx-2"
+                        <button class="btn crea-articolo px-2 mx-2 navRight"
                             style="padding: 0.5px 0px 0.5px 0px; font-size: 12px;"><a
                                 style="text-decoration: none; color:white;"
                                 href="{{ route('announcements.create') }}">{{__('ui.navMakeAnnouncement')}}</a></button>
                     </li>
                     <form action="/logout" method="POST" style="display: flex; align-items: center">
                         @csrf
-                        <button class="btn Logout px-2 mx-2"
+                        <button class="btn Logout px-2 mx-2 navRight"
                             style="padding: 0.5px 0px 0.5px 0px; font-size: 12px">{{ __('ui.logout') }}</button>
                     </form>
 
                 @endauth
 
                 @guest
-                    <li class="nav-item">
+                    <li class="nav-item navRight">
                         <a class="nav-link" href="/register">{{ __('ui.register') }}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item navRight">
                         <a class="nav-link" href="/login">{{ __('ui.login') }}</a>
                     </li>
                 @endguest
