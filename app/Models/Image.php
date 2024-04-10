@@ -32,6 +32,10 @@ class Image extends Model
 
     public function getFilePath($w = null, $h= null){
     /* return Image::getUrl($this->path, $w, $h); */
-    return asset('storage/' . $this->path . "/crop_{$w}x{$h}_{$this->fileName}");
+    $fileName = substr($this->path, 16);
+    return asset("storage/announcements/{$this->announcement->id}/crop_{$w}x{$h}_{$fileName}");
+
 }
+
+
 }

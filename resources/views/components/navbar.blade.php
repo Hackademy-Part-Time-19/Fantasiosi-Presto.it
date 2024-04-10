@@ -100,18 +100,20 @@
                 </div>
                 <div class="dropdown show d-flex align-items-center justify-content-center navRight" style="position: relative">
                     <a class="btn dropdown-toggle p-0 px-2 text-center"
-                        style="width:100%; back-drop-filter: blur(10px);" type="button" href="#" role="button"
+                        style="width:50%; back-drop-filter: blur(10px);" type="button" href="#" role="button"
                         id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ __('ui.navLang') }}
                     </a>
 
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="position: absolute; top: 100%">
+                    <div class="dropdown-menu flag" aria-labelledby="dropdownMenuLink" style="position: absolute; top: 100%; color:black;">
+                        <div class="d-flex flex-column align-items-center justify-content-center">
                         <x-locale lang1='it' style="width:30px"><x-flag-country-it
-                                style=" width:30px;" /></x-locale>
+                                style=" width:30px" /> <span style="color: var(--primary-color)">Italiano</span></x-locale>
                         <x-locale lang1='es' style="width:30px"><x-flag-country-es
-                                style=" width:30px;" /></x-locale>
+                                style=" width:30px;" /><span style="color: var(--primary-color)">Espanol</span></x-locale>
                         <x-locale lang1='gb' style="width:30px"><x-flag-country-gb
-                                style=" width:30px;" /></x-locale>
+                                style=" width:30px;" /><span style="color: var(--primary-color)">English</span></x-locale>
+                            </div>
                     </div>
                 </div>
 

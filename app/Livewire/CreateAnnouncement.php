@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Jobs\GoogleVisonSafeSearch;
 use App\Models\User;
 use Livewire\Component;
 use App\Models\Category;
@@ -83,9 +84,11 @@ class CreateAnnouncement extends Component
                     ]);
 
                     dispatch(new ResizeImage($newImage->path, 400, 300));
-            }
+                    dispatch(new GoogleVisonSafeSearch($newImage->id));
+            } 
+            File::deleteDirectory(storage_path('app/livewire-tmp'));
         }
-        File::deleteDirectory(storage_path('app/livewire-tmp'));
+       
 
  $this->cleanForm();
         session()->flash('success', 'Annuncio caricato con successo');
