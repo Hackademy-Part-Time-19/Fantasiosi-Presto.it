@@ -11,12 +11,11 @@
                     <div class="row justify-content-center" style="width: 50%; background-color:var(--primary-color); padding: 10px; border-radius: 10px">
                         <div style="border: 3px solid #fca21154; border-radius:10px; width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom: 10px" id="showCarousel" data-bs-ride="carousel" class="carousel slide">
                             @if ($announcement_to_check->images)
+
                             
                                 <div class="carousel-inner align-items-center">
                                     @foreach ($announcement_to_check->images as $image)
-                                    
                                         <div class="carousel-item @if ($loop->first) active @endif">
-                                            
                                             <img src="{{ Storage::url($image->path) }}" class="img-fluid p-3 rounded d-block"  height="300px" style="object-fit: cover; min-height: 300px; width: 100%" alt="...">
                                         </div>
                                     @endforeach

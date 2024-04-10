@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 use App\Models\Announcement;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -29,7 +30,8 @@ class Image extends Model
         return Storage::url($file);
     }
 
-    public function getUrl($w = null, $h= null){
-        return Image::getUrl($this->path, $w, $h);
-    }
+    public function getFilePath($w = null, $h= null){
+    /* return Image::getUrl($this->path, $w, $h); */
+    return asset('storage/' . $this->path . "/crop_{$w}x{$h}_{$this->fileName}");
+}
 }
