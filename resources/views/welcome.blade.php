@@ -25,64 +25,41 @@
                 </div>
             </section>
 
-            <main style="position: relative;">
-                <div class="linear-gradient">
-                </div>
-                <div class="Featured-product" style="position: relative; z-index: 1;">
-                    <div class="title-product" style="margin-bottom: 6rem" data-aos="fade-down" data-aos-duration="1000">
-                        <h1 style="z-index: 1">Featured Product</h1>
-                        <p style="z-index: 1">{{ __('ui.featured') }}</p>
-                    </div>
-                    <div class="row d-flex justify-content-center align-items-center flex-nowrap">
-                        @foreach ($announcements as $announcement)
-                            <div class="cards m-1 d-flex  flex-row gap-5 "
-                                style="z-index: 1; width: 100%; border: 2px solid var(--secondary-color);"
-                                data-aos="fade-up" data-aos-duration="1000">
-                                <main style="position: relative;">
-                                    <div class="linear-gradient">
-                                    </div>
-                                    <div class="Featured-product" style="position: relative; z-index: 1;">
-                                        <div class="title-product" style="margin-bottom: 6rem" data-aos="fade-down"
-                                            data-aos-duration="1000">
-                                            <h1 style="z-index: 1">Featured Product</h1>
-                                            <p style="z-index: 1">{{ __('ui.featured') }}</p>
-                                        </div>
-                                        <div class="row">
-                                            @foreach ($announcements as $announcement)
-                                                <div class="cards m-1 d-flex  flex-row gap-5 "
-                                                    style="z-index: 1; width: 100%; border: 2px solid var(--secondary-color);"
-                                                    data-aos="fade-up" data-aos-duration="1000">
+    <main style="position: relative;">
+        <div class="linear-gradient">
+        </div>
+        <div class="Featured-product" style="position: relative; z-index: 1;">
+            <div class="title-product" style="margin-bottom: 6rem" data-aos="fade-down" data-aos-duration="1000">
+            <h1 style="z-index: 1">Featured Product</h1>
+            <p style="z-index: 1">{{__('ui.featured')}}</p>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center flex-nowrap">
+        @foreach ($announcements as $announcement)
+            <div class="cards m-1 d-flex  flex-row gap-5 " style="z-index: 1; width: 100%; border: 2px solid var(--secondary-color);" data-aos="fade-up" data-aos-duration="1000">
 
-                                                    <div class="card-product d-flex flex-column text-center">
-                                                        {{--  <--! PHP ARTISAN QUEUE:WORK --> --}}
-                                                        @if (count($announcement->images) > 0)
-                                                            @foreach ($announcement->images as $image)
-                                                                <img class="img-fluid" height="400" width="300"
-                                                                    src="{{ $image->getFilePath(400, 300) }}"
-                                                                    alt="">
-                                                            @endforeach
-                                                        @else
-                                                            <img class="img-fluid" height="300" width="371"
-                                                                src="{{ Storage::url('immagini/Nuovoprogetto.png') }}"
-                                                                alt="">
-                                                        @endif
-                                                        <h5 style="width:100%; margin-top: 1rem">
-                                                            {{ Str::limit($announcement->title, 34) }}</h5>
-                                                        <p style="width: 100%; color:var(--paragraph-color)">
-                                                            {{ Str::limit($announcement->body, 100) }} <a
-                                                                href="{{ route('announcement.show', compact('announcement')) }}"
-                                                                style="color: var(--secondary-color); cursor:pointer">More</a>
-                                                        </p>
-                                                        <p
-                                                            style="width: 100%; color:var(--fifth-color); font-weight: 600; text-align:center; font-size: 1.5rem; text-decoration:underline var(--secondary-color)">
-                                                            {{ $announcement->price }}<span
-                                                                style="color:var(--fifth-color)">€</span></p>
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                        <div class="background-color"></div>
-                                    </div>
+                                <div class="card-product d-flex flex-column text-center">
+                                   {{--  <--! PHP ARTISAN QUEUE:WORK --> --}}
+                                    @if (count($announcement->images) > 0)
+                                    @foreach ($announcement->images as $image)
+                                    <img class="img-fluid" height="400" width="300" src="{{ $image->getFilePath(400, 300) }}" alt="">
+                                    @endforeach
+                                    @else
+                                    <img class="img-fluid" height="300" width="371" src="{{ Storage::url('immagini/Nuovoprogetto.png') }}" alt="">
+                                    @endif
+                                    <h5 style="width:100%; margin-top: 1rem">{{ Str::limit($announcement->title, 34) }}</h5>
+                                    <p style="width: 100%; color:var(--paragraph-color)">
+                                        {{ Str::limit($announcement->body, 100) }} <a
+                                            href="{{ route('announcement.show', compact('announcement')) }}"
+                                            style="color: var(--secondary-color); cursor:pointer">More</a></p>
+                                    <p
+                                        style="width: 100%; color:var(--fifth-color); font-weight: 600; text-align:center; font-size: 1.5rem; text-decoration:underline var(--secondary-color)">
+                                        {{ $announcement->price }}<span style="color:var(--fifth-color)">€</span></p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="background-color"></div>
+                </div>
 
 
                                     <div class="Testimonials d-flex justify-content-center flex-column align-items-center text-center"

@@ -16,12 +16,15 @@
                                 <div class="carousel-inner align-items-center justify-content-center">
                                     @foreach ($announcement_to_check->images as $image)
                                         <div class="carousel-item @if ($loop->first) active @endif">
-                                            <img src="{{ $image->getFilePath(400, 300) }}" class="img-fluid p-3 rounded d-block"   style="object-fit: cover; min-height: 300px;  alt="...">
+                                            <img src="{{$image->getFilePath(400, 300)}}"
+                                                class="img-fluid p-3 rounded d-block" height="300px"
+                                                style="object-fit: cover; min-height: 300px; width: 100%"
+                                                alt="...">
                                         </div>
                                     @endforeach
                                 @else
                                     <div class="carousel-item active" style="margin-right: 0%">
-                                        <img src="{{ Storage::url('immagini/Nuovo_progetto.png') }}"
+                                        <img src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}"
                                             class="img-fluid p-3 rounded d-block" height="300px"
                                             style="object-fit: cover; min-height: 300px; width: 100%" alt="...">
                                     </div>
