@@ -35,7 +35,6 @@ class Image extends Model
     $fileName = substr($this->path, 16);
     return asset("storage/announcements/{$this->announcement->id}/crop_{$w}x{$h}_{$fileName}");
 
-
 }
 
 
