@@ -7,4 +7,5 @@ return [
     'none' => 'There are no announcements at the moment.',
     'detail' => 'Detail',
     'research' => 'There are no announcements that match your search.',
-];
+]; 
+//Mattia
