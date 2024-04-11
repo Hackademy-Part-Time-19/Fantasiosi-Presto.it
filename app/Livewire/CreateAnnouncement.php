@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisonSafeSearch;
 use App\Models\User;
 use Livewire\Component;
@@ -85,6 +86,7 @@ class CreateAnnouncement extends Component
 
                     dispatch(new ResizeImage($newImage->path, 400, 300));
                     dispatch(new GoogleVisonSafeSearch($newImage->id));
+                    dispatch(new GoogleVisionLabelImage($newImage->id));
             } 
             File::deleteDirectory(storage_path('app/livewire-tmp'));
         }
