@@ -149,15 +149,15 @@
                 var isAuthenticated = {!! json_encode($authentication) !!};
                 let button = document.getElementById("button-primary");
 
-                button.addEventListener("click", () => {
-                    if (isAuthenticated) {
-                        window.location.href = "http://127.0.0.1:8000/announcements/create";
-                    }
-                });
-            </script>
-        @endif
-        
-    @endauth
+                                    button.addEventListener("click", () => {
+                                        if (isAuthenticated) {
+                                            window.location.href = "http://127.0.0.1:8000/announcements/create";
+                                        }
+                                    });
+                                </script>
+                            @endif
+                        @endforeach
+                    @endauth
 
     @guest
         <section style="border-bottom: 2px solid var(--secondary-color); background-color: var(--primary-color);">
