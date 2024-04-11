@@ -59,3 +59,5 @@ class GoogleVisionLabelImage implements ShouldQueue
         $imageAnnotator->close();
     }
 }
+
+
