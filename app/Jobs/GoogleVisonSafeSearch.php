@@ -3,12 +3,14 @@
 namespace App\Jobs;
 
 use App\Models\Image;
-use Google\Cloud\Vision\V1\Client\ImageAnnotatorClient;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+
+
 
 class GoogleVisonSafeSearch implements ShouldQueue
 {
@@ -35,7 +37,8 @@ class GoogleVisonSafeSearch implements ShouldQueue
             return;
         }
 
-        $image = file_get_contents(storage_path('app/public/' . $i->path));
+        $image = file_get_contents(storage_path('/app/public/' . $i->path));
+
 
         putenv("GOOGLE_APPLICATION_CREDENTIALS=" . base_path('google_credentials.json'));
 

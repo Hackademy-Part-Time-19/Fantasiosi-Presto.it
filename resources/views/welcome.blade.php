@@ -156,7 +156,6 @@
                                     });
                                 </script>
                             @endif
-                        @endforeach
                     @endauth
 
                     @guest
