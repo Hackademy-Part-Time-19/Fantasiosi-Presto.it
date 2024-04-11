@@ -12,6 +12,9 @@ class Image extends Model
 {
 
     protected $fillable = ['path'];
+    protected $casts = [
+        'labels'=>'array'
+    ];
     use HasFactory;
 
     public function announcement(){
