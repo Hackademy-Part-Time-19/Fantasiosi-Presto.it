@@ -3,7 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Image;
-use Google\Cloud\Vision\V1\Client\ImageAnnotatorClient;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -49,6 +49,7 @@ class GoogleVisonSafeSearch implements ShouldQueue
         $medical = $safe->getMedical();
         $spoof = $safe->getSpoof();
         $violence = $safe->getViolence();
+        $racy = $safe->getRacy();
 
         $likelihoodName = [
             'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE', 'LIKELY', 'VERY_LIKELY'
@@ -58,6 +59,7 @@ class GoogleVisonSafeSearch implements ShouldQueue
         $i->medical = $likelihoodName[$medical];
         $i->spoof = $likelihoodName[$spoof];
         $i->violence = $likelihoodName[$violence];
+        $i->racy = $likelihoodName[$racy];
 
         $i->save();
     }
