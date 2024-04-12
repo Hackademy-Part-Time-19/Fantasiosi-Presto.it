@@ -17,21 +17,39 @@
                 <div class="row">
 
 
-                    <div class="col-12">
-                        <div id="showCarousel" class="carousel slide" data-bs-ride="carousel"
-                            style="border: 3px solid #fca21154; border-radius:10px; width:50%; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom: 10px">
-                            @if ($announcement->images)
-                                <div class="carousel-inner align-items-center">
-                                    @foreach ($announcement->images as $image)
-                                        <div class="carousel-item @if ($loop->first) active @endif ">
-                                            <img src="{{ Storage::url($image->path) }}"
-                                                class="img fluid p-3 rounded d-block" width="300px" height="300px"
-                                                style="object-fit: contain;" alt="...">
+                    <div class="col-12 ">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="showCarousel" class="carousel slide " data-bs-ride="carousel"
+                                style="border: 3px solid #fca21154; border-radius:10px; width:50%; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom: 10px">
+                                @if ($announcement->images)
+                                    <div class="carousel-inner">
+                                        @foreach ($announcement->images as $image)
+                                            <div
+                                                class="carousel-item @if ($loop->first) active @endif justify-content-center align-items-center">
+                                                <img src="{{ Storage::url($image->path) }}"
+                                                    class="img fluid p-3 rounded d-block" width="300px" height="300px"
+                                                    style="object-fit: contain;" alt="...">
 
 
-                                        </div>
-                                    @endforeach
-                                </div>
+                                            </div>
+                                           
+                                        @endforeach
+                                        <button class="carousel-control-prev" style="top: 10%; z-index: 1"
+                                                type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon PREVIOUS"
+                                                    style="background-color:var(--fourth-color)"
+                                                    aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" style="top: 10%; z-index: 1;"
+                                                type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon NEXT"
+                                                    style="background-color:var(--fourth-color)"
+                                                    aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                    </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,7 +107,8 @@
             </div>
         </div>
     </div>
-    <div class="background-color"
+
+    {{-- <div class="background-color"
         style="position: absolute; z-index: 0; width: 100%; height:67.2vh; max-height: 67.2vh; min-height: 67.2vh; top: 13.5%; background-color: #2b375091">
-    </div>
+    </div> --}}
 </x-layout>
