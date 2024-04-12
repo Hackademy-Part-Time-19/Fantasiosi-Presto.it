@@ -50,26 +50,15 @@
                 </li>
                 @if (Auth::check() && Auth::user()->is_revisor)
                     <div class="d-flex align-items-center justify-content-center">
-                        <ul class="d-flex align-items-center justify-content-center">
-                            <a href="{{ route('revisor.index') }}" class="nav-link" style="color:var(--third-color); list-style: none; cursor: pointer">
-                                {{ __('ui.navRevisor') }}
-                                    @if (App\Models\announcement::toBeRevisionedCount() > 0)
-                                            <span
-                                                class="badge badge-danger text-danger">{{ App\Models\announcement::toBeRevisionedCount() }}
-                                                unread messages </span>
-                                    @elseif (App\Models\announcement::toBeRevisionedCount() < 0)
-                                            <span
-                                                class="badge badge-danger text-danger">{{ App\Models\announcement::toBeRevisionedCount() }}
-                                                unread messages </span>
-                                        </span>
-                                    @endif
-                                    </a>
+                        <ul class="d-flex align-items-start justify-content-start" style="padding:0px">
+                       @livewire('notifica-revisor')
                         </ul>
                     </div>
                 @endif
             </ul>
 
         </div>
+@if (request()->url() !== route('announcements.index'))
 
         <form action="{{ route('announcements.search') }}" method="GET"
             class="d-flex justify-content-center align-items-center;" style="position:absolute; right:43%;">
@@ -82,7 +71,7 @@
             </svg>
             <input class="input" type="search" placeholder="Search" name="searched" />
         </form>
-
+@endif
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

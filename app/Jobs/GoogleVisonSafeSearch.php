@@ -10,6 +10,8 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
+
+
 class GoogleVisonSafeSearch implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -35,7 +37,8 @@ class GoogleVisonSafeSearch implements ShouldQueue
             return;
         }
 
-        $image = file_get_contents(storage_path('app/public/' . $i->path));
+        $image = file_get_contents(storage_path('/app/public/' . $i->path));
+
 
         putenv("GOOGLE_APPLICATION_CREDENTIALS=" . base_path('google_credentials.json'));
 
@@ -51,7 +54,7 @@ class GoogleVisonSafeSearch implements ShouldQueue
         $violence = $safe->getViolence();
 
         $likelihoodName = [
-            'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE', 'LIKELY', 'VERY_LIKELY'
+            'text-secondary fas fa-circle', 'text-warning fas fa-circle', 'text-danger fas fa-circle', 'text-success fas fa-circle', 'text-info fas fa-circle','text-info fas fa-circle'
         ];
 
         $i->adult = $likelihoodName[$adult];

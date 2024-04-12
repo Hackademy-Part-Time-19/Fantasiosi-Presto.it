@@ -44,9 +44,9 @@ class ResizeImage implements ShouldQueue
         $srcPath = storage_path() . '/app/public/' . $this->path . '/' . $this->fileName;
 
         if (!file_exists($srcPath)) {
-            
+
             $srcPath = storage_path() . '/app/public/storage/immagini/Nuovo_progetto.png';
-        
+
         }
 
         $destPath = storage_path() . '/app/public/' . $this->path . "/crop_{$w}x{$h}_" . $this->fileName;
