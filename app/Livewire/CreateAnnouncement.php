@@ -2,12 +2,15 @@
 
 namespace App\Livewire;
 
+
 use App\Models\User;
 use Livewire\Component;
 use App\Models\Category;
+
 use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
+use App\Jobs\InsertWatermark;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use App\Jobs\GoogleVisonSafeSearch;
@@ -86,6 +89,7 @@ class CreateAnnouncement extends Component
                     ]);
 
                     RemoveFaces::withChain([
+                        new InsertWatermark($newImage->id),
                         new ResizeImage($newImage->path, 400, 300),
                         new GoogleVisonSafeSearch($newImage->id),
                         new GoogleVisionLabelImage($newImage->id)
