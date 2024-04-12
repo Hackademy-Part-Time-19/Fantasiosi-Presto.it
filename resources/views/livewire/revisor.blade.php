@@ -1,15 +1,18 @@
 <div wire:poll>
+
     <div class="container" style="min-height: 69.6vh; margin-top: 50px;">
+
         <div>
             <h1 style="text-align:center" class="mb-5">
                 {{ $announcement_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisonare' }}
             </h1>
         </div>
-        <div>
+        <div class="d-flex justify-content-center">
+
             @if ($announcement_to_check)
-                <div class="container d-flex justify-content-center align-items-center flex-column">
+                <div class="container d-flex justify-content-center align-items-center flex-column" style="width: 50%;">
                     <div class="row justify-content-center"
-                        style="width: 50%; background-color:var(--primary-color); padding: 10px; border-radius: 10px;">
+                        style="width: 100%; background-color:var(--primary-color); padding: 10px; border-radius: 10px;">
                         <div style="border: 3px solid #fca21154; border-radius:10px; width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom: 10px"
                             id="showCarousel" data-bs-ride="carousel" class="carousel slide">
                             @if (count($announcement_to_check->images) > 0)
@@ -76,11 +79,45 @@
                     </div>
 
 
+
                 </div>
+
+        </div>
+
+        <div>
+            <div class="row justify-content-center"
+                style="width: 340px; background-color:var(--primary-color); padding: 10px; border-radius: 10px;height: 300px;margin-left: -320px">
+                <div
+                    style="min-height: 30px;border: 1px solid var(--primary-color);border: 3px solid #fca21154; border-radius:10px; width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom: 10px">
+                    <h2 style="color:var(--third-color)">Revisione Immagini</h2>
+                    <h4 style="color:var(--third-color)">Adulti: <span class="{{ $image->adult }}"></span></h4>
+                    <h4 style="color:var(--third-color)">Satira: <span class="{{ $image->spoof }}"></span></h4>
+                    <h4 style="color:var(--third-color)">Medicina: <span class="{{ $image->medical }}"></span></h4>
+                    <h4 style="color:var(--third-color)">Violenza: <span class="{{ $image->violence }}"></span></h4>
+                    <h4 style="color:var(--third-color)">Contenuto ammicante: <span class="{{ $image->racy }}"></span>
+                    </h4>
+                </div>
+            </div>
+            <div class="row justify-content-center"
+                style="width: 340px; background-color:var(--primary-color); padding: 10px; border-radius: 10px;height: 260px;margin-left: -320px; margin-top: 10px">
+                <div
+                    style="min-height: 30px;border: 1px solid var(--primary-color);border: 3px solid #fca21154; border-radius:10px; width:100%; display:flex;flex-direction:column; justify-content:center; align-items:center; margin-bottom: 10px">
+                    <h2 style="color:var(--third-color)">Tags</h2>
+                    <div>
+                        @if ($image->labels)
+                            @foreach ($image->labels as $label)
+                                <p class="d-inline" style="color:var(--third-color)">#{{ $label }}</p>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+            </div>
         </div>
         @endif
     </div>
 
+
 </div>
+
 
 </div>
