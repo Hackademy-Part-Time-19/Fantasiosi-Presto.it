@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container d-flex flex-column align-items-center mt-2"
+    <div id="announcements" class="container d-flex flex-column align-items-center mt-2"
         style="padding: 10px; height: 40vh; background-color: var(--primary-color); position:relative; border-radius: 10px; border: 2px solid var(--secondary-color); box-shadow: 0 0 0 5px rgb(247 127 0 / 10%);">
         <h1 class="text-center mt-5" style="color: var(--third-color);">{{__('uiAnnoun.title')}}</h1>
         <p style="margin-top: 0px; color: var(--paragraph-color)">{{__('uiAnnoun.main')}}</p>

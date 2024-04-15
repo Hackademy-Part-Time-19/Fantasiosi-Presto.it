@@ -4,7 +4,7 @@
     <div class="return d-flex gap-3 mb-5 justify-content-center">
         <a class="btn btn-primary mt-2" href="{{ route('announcements.index') }}" style="cursor: pointer; z-index: 1; background-color: var(--primary-color); border-color: var(--fourth-color);">Torna indietro</a>
     </div>
-    <div class="container d-flex justify-content-center gap-3">
+    <div id="categoryContainer" class="container d-flex justify-content-center gap-3">
 
     @forelse ($category->announcements as $announcement)
     <div class="d-flex flex-column justify-content-center align-items-center">

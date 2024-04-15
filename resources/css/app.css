@@ -327,7 +327,10 @@ main{
 .card-customer{
     margin-bottom: 20px;
     display: none;
-    background-color: var(--primary-color);
+    background: rgb(33, 40, 56);
+    background: linear-gradient(357deg, rgba(43,55,80,1) 0%, rgba(20,33,61,0.9556197478991597) 100%);
+    backdrop-filter: blur(200px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.473), 0 4px 8px rgba(0, 0, 0, 0.479);
     border-radius: 0.5rem;
     padding: 1rem;
     animation: slideIn 0.5s ease-in-out forwards;
@@ -343,10 +346,13 @@ main{
     animation: slideOut 0.5s ease-in-out forwards;
 }
 
-.card-customer>.right-side-customer>p{
+.card-customer>.right-side-customer{
     text-align: left;
-    color: var(--paragraph-color)!important;
-    font-size: 20px;
+    color: var(--third-color);
+    font-size: 17px;
+    width: 100%;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 .card-customer>.left-side-customer>h2{
@@ -354,6 +360,17 @@ main{
    color: var(--fifth-color);
    width: 100%;
 }
+
+.card-customer>.left-side-customer{
+    width: 170px;
+    max-width: 170px;
+    min-width: 170px;
+    overflow: hidden;
+}
+.flex>h6{
+    color: var(--third-color);
+}
+
 .img-customer{
     margin-bottom: 10px;
 }
@@ -643,4 +660,147 @@ footer p{
 }
 .page-link{
     background-color: #2b3750;
+}
+
+
+/*! Media queries */
+@media screen and (max-width: 1024px) {
+
+    .button-launch>h1{
+        font-size: 2rem;
+        width: 80%;
+        margin-bottom: 1.5rem;
+    }
+    #button-primary{
+        max-width: 40%;
+        width: 40%;
+        max-height: 10%;
+        padding: 20px;
+    }
+
+    ul.navbar-nav{
+        margin-right: 12%!important;
+    }
+
+    #navbarSupportedContent{
+        margin-left: 8%!important;
+    }
+
+    .logo-image{
+       display: none;
+    }
+
+    .Featured-product>.row{
+        justify-content: center!important;
+        width: 90%!important;
+        flex-wrap: wrap!important;
+        align-items: center!important;
+    }
+
+    .background-color
+    {height: 130vh;
+        top: 49%;
+    }
+
+    .Testimonials>p.fw-normal{
+        width: 70%!important;
+    }
+
+    .slideshow{
+        width: 60%!important;
+
+    }
+
+    .Testimonials{
+        overflow-x: hidden;
+    }
+
+    .left-side-customer>.flex>h6{
+        font-size: 1.1rem;
+
+    }
+
+    .right-side-customer>i.fw-bold{
+        font-size: 1.6rem!important;
+    }
+
+    .right-side-customer>p.fw-normal{
+        font-size: 1.2rem;
+    }
+
+    p, .card-text:nth-child(5){
+        margin-bottom:5px!important;
+    }
+    .card{
+        margin-bottom: 20px;
+    }
+
+    #announcements{
+        height: 60vh!important;
+    }
+
+    #announcements>form{
+        right: 37%!important;
+    }
+
+    .left-container{
+        max-height: 393px!important ;
+    }
+
+    nav{
+        position: fixed;
+    }
+
+    #loginForm{
+        margin-top: 2rem;
+    }
+
+    #loginBackground{
+        max-height: 60vh!important;
+        min-height: 60vh!important;
+        height: auto!important;
+        top: 59.4%!important;
+    }
+
+    #detailContainer{
+        height: 100vh!important;
+        max-height: 100vh!important;
+        min-height: 100vh!important;
+
+    }
+
+    .dots{
+        margin-top: 20px;
+    }
+
+    .slideshow{
+
+        margin-top: 5rem!important;
+    }
+
+    #categoryContainer{
+        width: 99%!important;
+        flex-wrap: wrap;
+    }
+
+    #registrationForm{
+        margin-top: 2rem;
+    }
+
+    #registrationForm>.left-container{
+        max-height:610px!important;
+        min-height: 610px!important;
+        height: 610px!important ;
+    }
+
+    #registrationBackground{
+        max-height: none!important;
+        min-height: none!important;
+        height: 80vh!important;
+        top: 81.5%!important;
+    }
+
+    form>.icon{
+        display: none!important;
+    }
 }

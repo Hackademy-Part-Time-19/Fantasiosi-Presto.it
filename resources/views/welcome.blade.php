@@ -15,7 +15,7 @@
                                         d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
                                         fill="currentColor"></path>
                                 </svg>
-                                <span>{{ __('ui.makeAnnouncement') }}</span>
+                                <span style="font-size: 14px">{{ __('ui.makeAnnouncement') }}</span>
                             </button>
                         </div>
                     </div>
@@ -67,80 +67,137 @@
 
 
                 <div class="Testimonials d-flex justify-content-center flex-column align-items-center text-center"
-                    style="z-index: 1">
-                    <h1 style="margin-top: 5rem; z-index: 1; font-weight:700; font-size: 3rem; margin-top:13%;"
-                        data-aos="fade-down" data-aos-duration="1000">Customer Testimonials</h1>
-                    <p class="fw-normal"
-                        style="color:var(--paragraph-color); z-index: 1; font-size:20px;width:35%; margin-top:0rem; margin-bottom: 5rem"
-                        data-aos="fade-right" data-aos-duration="1000">{{ __('ui.testimonials') }}</p>
-                    <div class="slideshow d-flex flex-row" style="width:25%; z-index: 1" data-aos="fade-down"
-                        data-aos-duration="1000">
-                        <div class="card-customer flex-row">
-                            <div
-                                class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
-                                <img class="img-customer img-fluid" height="100" width="100"
-                                    style="border-radius: 10px" src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}"
-                                    alt="">
-                                <h2>Fabiano</h2>
-                                <h2>Buscemi</h2>
-                            </div>
-                            <div class="right-side-customer">
-                                <p class="fw-normal p-3" style="color:var(--gray-text-color)">Lorem
-                                    ipsum dolor sit amet
-                                    consectetur adipisicing elit. Iusto, quae.</p>
+                style="z-index: 1">
+                <h1 style="margin-top: 5rem; z-index: 1; font-weight:700; font-size: 3rem; margin-top:13%;"
+                    data-aos="fade-down" data-aos-duration="1000">Customer Testimonials</h1>
+                <p class="fw-normal"
+                    style="color:var(--paragraph-color); z-index: 1; font-size:20px;width:35%; margin-top:0rem; margin-bottom: 5rem"
+                    data-aos="fade-right" data-aos-duration="1000">{{ __('ui.testimonials') }}</p>
+                <div class="slideshow d-flex flex-column"
+                    style="width:25%; z-index: 1; max-height:273px; min-height:273px;" data-aos="fade-down"
+                    data-aos-duration="1000">
+                    <div class="card-customer flex-row ">
+                        <div
+                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end ">
+                            <img class="img-customer "
+                                style="border-radius:50%; object-fit:cover; border:1px solid var(--secondary-color)"
+                                height="120" width="120" style="border-radius: 10px"
+                                src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}" alt="">
+                            <div class="flex flex-row w-100 mb-5">
+                                <h6 class="mt-1">Fabiano Buscemi</h6>
+                                <div class="flex w-100 pt-3">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                </div>
                             </div>
                         </div>
+                        <div class="right-side-customer">
+                            <i class="fw-bold mt-1 mb-0" style="padding-left:15px!important; font-size:18px; text-decoration:underline var(--secondary-color)">Fabiano scrive...</i>
+                            <p class="fw-normal p-3"> Navigare su questo sito è stato
+                                un piacere. Interfaccia intuitiva, vasta gamma di prodotti e processo di acquisto rapido e
+                                sicuro. Consigliato!
+                            </p>
+                        </div>
+                    </div>
 
-                        <div class="card-customer flex-row " style="z-index: 1">
-                            <div
-                                class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
-                                <img class="img-customer img-fluid" height="150" width="150"
-                                    style="border-radius: 10px" src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}"
-                                    alt="">
-                                <h2>Gabriele</h2>
-                                <h2>Lucchetti</h2>
-                            </div>
-                            <div class="right-side-customer">
-                                <p class="fw-normal p-3" style="color:var(--gray-text-color)">Lorem
-                                    ipsum dolor sit amet
-                                    consectetur adipisicing elit. Iusto, quae.</p>
-                            </div>
-                        </div>
-                        <div class="card-customer flex-row ">
-                            <div
-                                class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
-                                <img class="img-customer img-fluid" height="150" width="150"
-                                    style="border-radius: 10px" src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}"
-                                    alt="">
-                                <h2>Samuele</h2>
-                                <h2>Lombardo</h2>
-                            </div>
-                            <div class="right-side-customer">
-                                <p class="fw-normal p-3" style="color:var(--gray-text-color)">Lorem
-                                    ipsum dolor sit amet
-                                    consectetur adipisicing elit. Iusto, quae.</p>
+                    <div class="card-customer flex-row ">
+                        <div
+                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end ">
+                            <img class="img-customer "
+                                style="border-radius:50%; object-fit:cover; border:2px solid var(--secondary-color)"
+                                height="120" width="120" style="border-radius: 10px"
+                                src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}" alt="">
+                            <div class="flex flex-row w-100 mb-5">
+                                <h6 class="mt-1">Gabriele Lucchetti</h6>
+                                <div class="flex w-100 justify-content-center align-items-center pt-3">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img style="mb-1" width="19px" height="19px" src="{{ Storage::url('immagini/rating.png') }}"
+                                        alt="">
+                                </div>
                             </div>
                         </div>
-                        <div class="card-customer flex-row ">
-                            <div
-                                class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
-                                <img class="img-customer img-fluid" height="150" width="150"
-                                    style="border-radius: 10px" src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}"
-                                    alt="">
-                                <h2>Mattia</h2>
-                                <h2>Senatore</h2>
-                            </div>
-                            <div class="right-side-customer">
-                                <p class="fw-normal p-3" style="color:var(--gray-text-color)">Lorem
-                                    ipsum dolor sit amet
-                                    consectetur adipisicing elit. Iusto, quae.</p>
-                            </div>
+                        <div class="right-side-customer">
+                            <i class="fw-bold mt-1 mb-0" style="padding-left:15px!important; font-size:18px; text-decoration:underline var(--secondary-color)">Gabriele scrive...</i>
+                            <p class="fw-normal p-3" style="color:var(--gray-text-color)">Sito ben strutturato e facile da
+                                usare. Ho trovato ciò che cercavo senza difficoltà. Servizio clienti disponibile e consegna
+                                puntuale.</p>
                         </div>
                     </div>
-                    <div class="dots">
+                    <div class="card-customer flex-row ">
+                        <div
+                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end ">
+                            <img class="img-customer "
+                                style="border-radius:50%; object-fit:cover; border:1px solid var(--secondary-color)"
+                                height="120" width="120" style="border-radius: 10px"
+                                src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}" alt="">
+                            <div class="flex flex-row w-100 mb-5">
+                                <h6 class="mt-1">Samuele Lombardo</h6>
+                                <div class="justify-content-center align-items-center pt-3">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-side-customer">
+                            <i class="fw-bold mt-1 mb-0" style="padding-left:15px!important; font-size:18px; text-decoration:underline var(--secondary-color)">Samuele scrive...</i>
+                            <p class="fw-normal p-3"> Esperienza di shopping online senza problemi. Interfaccia chiara,
+                                descrizioni accurate dei prodotti e spedizione veloce. Ottimo!
+                            </p>
+                        </div>
                     </div>
+                    <div class="card-customer flex-row ">
+                        <div
+                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end ">
+                            <img class="img-customer "
+                                style="border-radius:50%; object-fit:cover; border:1px solid var(--secondary-color)"
+                                height="120" width="120" style="border-radius: 10px"
+                                src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}" alt="">
+                            <div class="flex flex-row w-100 mb-5">
+                                <h6 class="mt-1">Mattia Senatore</h6>
+                                <div class="justify-content-center align-items-center pt-3">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                        <img style="mb-1" width="19px" height="19px" src="{{ Storage::url('immagini/rating.png') }}"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-side-customer">
+                            <i class="fw-bold mt-1 mb-0" style="padding-left:15px!important; font-size:18px; text-decoration:underline var(--secondary-color)">Mattia scrive...</i>
+                            <p class="fw-normal p-3"> Sono rimasto impressionato dalla semplicità e dall'efficienza di questo sito. Acquistare è stato veloce e sicuro, e ho ricevuto assistenza immediata quando necessario. Top!
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
-
+            </div>
+            <div class="dots">
+            </div>
             </main>
 
         </div>
@@ -149,14 +206,14 @@
                 var isAuthenticated = {!! json_encode($authentication) !!};
                 let button = document.getElementById("button-primary");
 
-                                    button.addEventListener("click", () => {
-                                        if (isAuthenticated) {
-                                            window.location.href = "http://127.0.0.1:8000/announcements/create";
-                                        }
-                                    });
-                                </script>
-                            @endif
-                    @endauth
+                button.addEventListener("click", () => {
+                    if (isAuthenticated) {
+                        window.location.href = "http://127.0.0.1:8000/announcements/create";
+                    }
+                });
+            </script>
+        @endif
+    @endauth
 
     @guest
         <section style="border-bottom: 2px solid var(--secondary-color); background-color: var(--primary-color);">
@@ -225,74 +282,133 @@
                 <p class="fw-normal"
                     style="color:var(--paragraph-color); z-index: 1; font-size:20px;width:35%; margin-top:0rem; margin-bottom: 5rem"
                     data-aos="fade-right" data-aos-duration="1000">{{ __('ui.testimonials') }}</p>
-                <div class="slideshow d-flex flex-row" style="width:25%; z-index: 1" data-aos="fade-down"
+                <div class="slideshow d-flex flex-column"
+                    style="width:25%; z-index: 1; max-height:273px; min-height:273px;" data-aos="fade-down"
                     data-aos-duration="1000">
                     <div class="card-customer flex-row ">
                         <div
-                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
-                            <img class="img-customer img-fluid" height="100" width="100"
-                                style="border-radius: 10px" src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}"
-                                alt="">
-                            <h2>Fabiano</h2>
-                            <h2>Buscemi</h2>
+                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end ">
+                            <img class="img-customer "
+                                style="border-radius:50%; object-fit:cover; border:1px solid var(--secondary-color)"
+                                height="120" width="120" style="border-radius: 10px"
+                                src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}" alt="">
+                            <div class="flex flex-row w-100 mb-5">
+                                <h6 class="mt-1">Fabiano Buscemi</h6>
+                                <div class="flex w-100 pt-3">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                </div>
+                            </div>
                         </div>
                         <div class="right-side-customer">
-                            <p class="fw-normal p-3" style="color:var(--gray-text-color)">Lorem ipsum
-                                dolor sit amet
-                                consectetur adipisicing elit. Iusto, quae.</p>
+                            <i class="fw-bold mt-1 mb-0" style="padding-left:15px!important; font-size:18px; text-decoration:underline var(--secondary-color)">Fabiano scrive...</i>
+                            <p class="fw-normal p-3"> Navigare su questo sito è stato
+                                un piacere. Interfaccia intuitiva, vasta gamma di prodotti e processo di acquisto rapido e
+                                sicuro. Consigliato!
+                            </p>
                         </div>
                     </div>
 
                     <div class="card-customer flex-row ">
                         <div
-                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
-                            <img class="img-customer img-fluid" height="150" width="150"
-                                style="border-radius: 10px" src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}"
-                                alt="">
-                            <h2>Gabriele</h2>
-                            <h2>Lucchetti</h2>
+                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end ">
+                            <img class="img-customer "
+                                style="border-radius:50%; object-fit:cover; border:2px solid var(--secondary-color)"
+                                height="120" width="120" style="border-radius: 10px"
+                                src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}" alt="">
+                            <div class="flex flex-row w-100 mb-5">
+                                <h6 class="mt-1">Gabriele Lucchetti</h6>
+                                <div class="flex w-100 justify-content-center align-items-center pt-3">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img style="mb-1" width="19px" height="19px" src="{{ Storage::url('immagini/rating.png') }}"
+                                        alt="">
+                                </div>
+                            </div>
                         </div>
                         <div class="right-side-customer">
-                            <p class="fw-normal p-3" style="color:var(--gray-text-color)">Lorem ipsum
-                                dolor sit amet
-                                consectetur adipisicing elit. Iusto, quae.</p>
+                            <i class="fw-bold mt-1 mb-0" style="padding-left:15px!important; font-size:18px; text-decoration:underline var(--secondary-color)">Gabriele scrive...</i>
+                            <p class="fw-normal p-3" style="color:var(--gray-text-color)">Sito ben strutturato e facile da
+                                usare. Ho trovato ciò che cercavo senza difficoltà. Servizio clienti disponibile e consegna
+                                puntuale.</p>
                         </div>
                     </div>
                     <div class="card-customer flex-row ">
                         <div
-                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
-                            <img class="img-customer img-fluid" height="150" width="150"
-                                style="border-radius: 10px" src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}"
-                                alt="">
-                            <h2>Samuele</h2>
-                            <h2>Lombardo</h2>
+                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end ">
+                            <img class="img-customer "
+                                style="border-radius:50%; object-fit:cover; border:1px solid var(--secondary-color)"
+                                height="120" width="120" style="border-radius: 10px"
+                                src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}" alt="">
+                            <div class="flex flex-row w-100 mb-5">
+                                <h6 class="mt-1">Samuele Lombardo</h6>
+                                <div class="justify-content-center align-items-center pt-3">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                </div>
+                            </div>
                         </div>
                         <div class="right-side-customer">
-                            <p class="fw-normal p-3" style="color:var(--gray-text-color)">Lorem ipsum
-                                dolor sit amet
-                                consectetur adipisicing elit. Iusto, quae.</p>
+                            <i class="fw-bold mt-1 mb-0" style="padding-left:15px!important; font-size:18px; text-decoration:underline var(--secondary-color)">Samuele scrive...</i>
+                            <p class="fw-normal p-3"> Esperienza di shopping online senza problemi. Interfaccia chiara,
+                                descrizioni accurate dei prodotti e spedizione veloce. Ottimo!
+                            </p>
                         </div>
                     </div>
                     <div class="card-customer flex-row ">
                         <div
-                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end p-3">
-                            <img class="img-customer img-fluid" height="150" width="150"
-                                style="border-radius: 10px" src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}"
-                                alt="">
-                            <h2>Mattia</h2>
-                            <h2>Senatore</h2>
+                            class="left-side-customer d-flex flex-column justify-content-center align-items-center border-end ">
+                            <img class="img-customer "
+                                style="border-radius:50%; object-fit:cover; border:1px solid var(--secondary-color)"
+                                height="120" width="120" style="border-radius: 10px"
+                                src="{{ Storage::url('immagini/Nuovo_progetto_1.jpg') }}" alt="">
+                            <div class="flex flex-row w-100 mb-5">
+                                <h6 class="mt-1">Mattia Senatore</h6>
+                                <div class="justify-content-center align-items-center pt-3">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                    <img width="24px" height="24px" src="{{ Storage::url('immagini/star.png') }}"
+                                        alt="">
+                                        <img style="mb-1" width="19px" height="19px" src="{{ Storage::url('immagini/rating.png') }}"
+                                        alt="">
+                                </div>
+                            </div>
                         </div>
                         <div class="right-side-customer">
-                            <p class="fw-normal p-3" style="color:var(--gray-text-color)">Lorem ipsum
-                                dolor sit amet
-                                consectetur adipisicing elit. Iusto, quae.</p>
+                            <i class="fw-bold mt-1 mb-0" style="padding-left:15px!important; font-size:18px; text-decoration:underline var(--secondary-color)">Mattia scrive...</i>
+                            <p class="fw-normal p-3"> Sono rimasto impressionato dalla semplicità e dall'efficienza di questo sito. Acquistare è stato veloce e sicuro, e ho ricevuto assistenza immediata quando necessario. Top!
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="dots">
+
                 </div>
             </div>
-
+            </div>
+            <div class="dots mt-5">
+            </div>
+            </div>
         </main>
         <script>
             let button = document.getElementById("button-primary");

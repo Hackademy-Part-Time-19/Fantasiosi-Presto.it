@@ -14,7 +14,7 @@
 
 
 
-            <ul class="navbar-nav d-flex align-items-center justify-content-center me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav d-flex align-items-center justify-content-space-center mb-2 mb-lg-0" style="margin-right: 39%;">
 
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ route('welcome') }}">Home</a>
@@ -55,39 +55,30 @@
                         </ul>
                     </div>
                 @endif
+
             </ul>
+            @if (request()->url() !== route('announcements.index'))
 
+            <form action="{{ route('announcements.search') }}" method="GET"
+                class="d-flex justify-content-center align-items-center;" style="">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+                    <g>
+                        <path
+                            d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                        </path>
+                    </g>
+                </svg>
+                <input class="input" type="search" placeholder="Search" name="searched" />
+            </form>
+            @endif
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-@if (request()->url() !== route('announcements.index'))
-
-        <form action="{{ route('announcements.search') }}" method="GET"
-            class="d-flex justify-content-center align-items-center;" style="position:absolute; right:43%;">
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
-                <g>
-                    <path
-                        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
-                    </path>
-                </g>
-            </svg>
-            <input class="input" type="search" placeholder="Search" name="searched" />
-        </form>
-@endif
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <div class="visually-hidden">
-                    <input type="checkbox" class="checkbox" id="checkbox" name="checkbox">
-                    <label for="checkbox" class="checkbox-label">
-                        <i class="fas fa-moon"></i>
-                        <i class="fas fa-sun"></i>
-                        <span class="ball"></span>
-                    </label>
-                </div>
-                <div class="dropdown show d-flex align-items-center justify-content-center navRight" style="position: relative">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left:25%;">
+            <ul class="navbar-nav d-flex align-items-center justify-content-center  mb-2 mb-lg-0">
+                <div class="dropdown show d-flex align-items-center justify-content-end navRight" style="position: relative">
                     <a class="btn dropdown-toggle p-0 px-2 text-center"
                         style="width:50%; back-drop-filter: blur(10px);" type="button" href="#" role="button"
                         id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -123,11 +114,11 @@
                 @endauth
 
                 @guest
-                    <li class="nav-item navRight">
-                        <a class="nav-link" href="/register">{{ __('ui.register') }}</a>
+                    <li class="nav-item" style="padding:0px!important">
+                        <a class="nav-link" style="margin-right:10px" href="/register">{{ __('ui.register') }}</a>
                     </li>
-                    <li class="nav-item navRight">
-                        <a class="nav-link" href="/login">{{ __('ui.login') }}</a>
+                    <li class="nav-item" style="padding:0px!important">
+                        <a class="nav-link" style="padding:0px;" href="/login">{{ __('ui.login') }}</a>
                     </li>
                 @endguest
 

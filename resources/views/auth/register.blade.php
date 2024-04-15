@@ -1,9 +1,9 @@
 
 <x-layout>
-    <div class="background-color"
+    <div id="registrationBackground" class="background-color"
         style="position: absolute; z-index: 0; width: 100%; max-height: 50.8%; height: 50.8%; top: 40%; background-color: #2b375091">
     </div>
-    <div class="container d-flex justify-content-center  align-items-center"
+    <div id="registrationForm" class="container d-flex justify-content-center  align-items-center"
         style="min-height:78vh; position:relative; overflow:hidden">
         <div class="left-container" style="max-width:320px; width: 100%; max-height:610px; height: 610px; background-image: url('{{Storage::url('immagini/phone12.png')}}');" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
         </div>

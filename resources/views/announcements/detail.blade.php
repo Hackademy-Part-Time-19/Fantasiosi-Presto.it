@@ -1,7 +1,7 @@
 <x-layout>
 
 
-    <div class="container" style="height:75.1vh; max-height:75.1vh; min-height:75.1vh;">
+    <div id="detailContainer" class="container" style="height:75.1vh; max-height:75.1vh; min-height:75.1vh;">
         <div class="bg-color d-flex justify-content-center flex-column align-items-center"
             style="background-color: var(--primary-color); z-index: 1; margin-top:4.5rem;">
             <div class="return" style="z-index: 1">
@@ -25,30 +25,27 @@
                                     <div class="carousel-inner">
                                         @foreach ($announcement->images as $image)
                                             <div
-                                                class="carousel-item @if ($loop->first) active @endif justify-content-center align-items-center">
+                                                class="carousel-item d-flex @if ($loop->first) active @endif justify-content-center align-items-center">
                                                 <img src="{{ Storage::url($image->path) }}"
                                                     class="img fluid p-3 rounded d-block" width="300px" height="300px"
                                                     style="object-fit: contain;" alt="...">
 
 
                                             </div>
-                                           
                                         @endforeach
                                         <button class="carousel-control-prev" style="top: 10%; z-index: 1"
-                                                type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                                                <span class="carousel-control-prev-icon PREVIOUS"
-                                                    style="background-color:var(--fourth-color)"
-                                                    aria-hidden="true"></span>
-                                                <span class="visually-hidden">Previous</span>
-                                            </button>
-                                            <button class="carousel-control-next" style="top: 10%; z-index: 1;"
-                                                type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                                                <span class="carousel-control-next-icon NEXT"
-                                                    style="background-color:var(--fourth-color)"
-                                                    aria-hidden="true"></span>
-                                                <span class="visually-hidden">Next</span>
-                                            </button>
-                                    </div> 
+                                            type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon PREVIOUS"
+                                                style="background-color:var(--fourth-color)" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" style="top: 10%; z-index: 1;"
+                                            type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon NEXT"
+                                                style="background-color:var(--fourth-color)" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -56,7 +53,7 @@
             </div>
         @else
             <div id="carouselExample" class="carousel slide mt-4" style="max-width: 235px;">
-                <div class="carousel-inner">
+                <div class="carousel-inner d-flex justify-content-center align-items-center">
                     <div class="carousel-item active" style="z-index: 1">
                         <img style="border: 2px solid var(--secondary-color); max-width:270px; max-height:160px;"
                             src="{{ Storage::url('immagini/Nuovoprogetto.png') }}" class="d-block w-100 "
