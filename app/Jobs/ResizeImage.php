@@ -5,7 +5,9 @@ namespace App\Jobs;
 use Spatie\Image\Image;
 use Illuminate\Bus\Queueable;
 use Spatie\Image\Manipulations;
+
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -20,10 +22,11 @@ class ResizeImage implements ShouldQueue
     private $path;
 
 
+
     /**
      * Create a new job instance.
      */
-    public function __construct($filepath, $w, $h)
+    public function __construct($filepath, $w, $h,)
     {
         $this->path = dirname($filepath);
         $this->fileName = basename($filepath);

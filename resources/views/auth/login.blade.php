@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="background-color" style="position: absolute; z-index: 0; width: 100%; max-height: 41.8vh; height: 41.8vh; top: 49%; background-color: #2b375091"></div>
-    <div class="container d-flex justify-content-center  align-items-center" style="min-height:78vh; position:relative; overflow:hidden">
+    <div id="loginBackground" class="background-color" style="position: absolute; z-index: 0; width: 100%; max-height: 41.8vh; height: 41.8vh; top: 49%; background-color: #2b375091"></div>
+    <div id="loginForm" class="container d-flex justify-content-center  align-items-center" style="min-height:78vh; position:relative; overflow:hidden">
         <div class="left-container" style="max-width:320px; width: 100%; max-height:426px; height: 426px;" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
         </div>
         @if (session()->has('error'))

@@ -1,7 +1,7 @@
 <x-layout>
 
 
-    <div class="container" style="height:75.1vh; max-height:75.1vh; min-height:75.1vh;">
+    <div id="detailContainer" class="container" style="height:75.1vh; max-height:75.1vh; min-height:75.1vh;">
         <div class="bg-color d-flex justify-content-center flex-column align-items-center"
             style="background-color: var(--primary-color); z-index: 1; margin-top:4.5rem;">
             <div class="return" style="z-index: 1">
@@ -17,28 +17,43 @@
                 <div class="row">
 
 
-                    <div class="col-12">
-                        <div id="showCarousel" class="carousel slide" data-bs-ride="carousel"
-                            style="border: 3px solid #fca21154; border-radius:10px; width:50%; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom: 10px">
-                            @if ($announcement->images)
-                                <div class="carousel-inner align-items-center">
-                                    @foreach ($announcement->images as $image)
-                                        <div class="carousel-item @if ($loop->first) active @endif ">
-                                            <img src="{{ Storage::url($image->path) }}"
-                                                class="img fluid p-3 rounded d-block" width="300px" height="300px"
-                                                style="object-fit: contain;" alt="...">
+                    <div class="col-12 ">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="showCarousel" class="carousel slide " data-bs-ride="carousel"
+                                style="border: 3px solid #fca21154; border-radius:10px; width:50%; display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom: 10px">
+                                @if ($announcement->images)
+                                    <div class="carousel-inner">
+                                        @foreach ($announcement->images as $image)
+                                            <div
+                                                class="carousel-item d-flex @if ($loop->first) active @endif justify-content-center align-items-center">
+                                                <img src="{{ Storage::url($image->path) }}"
+                                                    class="img fluid p-3 rounded d-block" width="300px" height="300px"
+                                                    style="object-fit: contain;" alt="...">
 
 
-                                        </div>
-                                    @endforeach
-                                </div>
+                                            </div>
+                                        @endforeach
+                                        <button class="carousel-control-prev" style="top: 10%; z-index: 1"
+                                            type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon PREVIOUS"
+                                                style="background-color:var(--fourth-color)" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" style="top: 10%; z-index: 1;"
+                                            type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon NEXT"
+                                                style="background-color:var(--fourth-color)" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         @else
             <div id="carouselExample" class="carousel slide mt-4" style="max-width: 235px;">
-                <div class="carousel-inner">
+                <div class="carousel-inner d-flex justify-content-center align-items-center">
                     <div class="carousel-item active" style="z-index: 1">
                         <img style="border: 2px solid var(--secondary-color); max-width:270px; max-height:160px;"
                             src="{{ Storage::url('immagini/Nuovoprogetto.png') }}" class="d-block w-100 "
@@ -89,7 +104,8 @@
             </div>
         </div>
     </div>
-    <div class="background-color"
+
+    {{-- <div class="background-color"
         style="position: absolute; z-index: 0; width: 100%; height:67.2vh; max-height: 67.2vh; min-height: 67.2vh; top: 13.5%; background-color: #2b375091">
-    </div>
+    </div> --}}
 </x-layout>

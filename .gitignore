@@ -6,6 +6,7 @@
 /storage/*.key
 /vendor
 .env
+google_credentials.json
 .env.backup
 .env.production
 Homestead.json
@@ -17,3 +18,4 @@ yarn-error.log
 /.idea
 /.vscode
 /storage/*.index
+google_credentials.json

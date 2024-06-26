@@ -33,6 +33,8 @@ class AnnouncementsController extends Controller
         $validated = $request->validated();
         $announcement=Announcement::create($validated);
 
+        
+
         return redirect()->back()->with('success', 'Annuncio caricato con successo');
     }
 

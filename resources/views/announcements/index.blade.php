@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container d-flex flex-column align-items-center mt-2"
+    <div id="announcements" class="container d-flex flex-column align-items-center mt-2"
         style="padding: 10px; height: 40vh; background-color: var(--primary-color); position:relative; border-radius: 10px; border: 2px solid var(--secondary-color); box-shadow: 0 0 0 5px rgb(247 127 0 / 10%);">
         <h1 class="text-center mt-5" style="color: var(--third-color);">{{__('uiAnnoun.title')}}</h1>
         <p style="margin-top: 0px; color: var(--paragraph-color)">{{__('uiAnnoun.main')}}</p>
@@ -60,7 +60,7 @@
             <div class="d-flex flex-wrap justify-content-center gap-3">
         @forelse ($announcements as $announcement)
 
-            <x-card :user="$announcement->user" :image="count($announcement->images) > 0 ?  Storage::url($announcement->images->first()->path) : ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYscfUBUbqwGd_DHVhG-ZjCOD7MUpxp4uhNe7toUg4ug&s')" :title="$announcement->title" :body="$announcement->body" :price="$announcement->price" :category="$announcement->category"
+            <x-card :user="$announcement->user" :image="count($announcement->images) > 0 ?  Storage::url($announcement->images->first()->path) : ('/storage/immagini/Nuovoprogetto.png')" :title="$announcement->title" :body="$announcement->body" :price="$announcement->price" :category="$announcement->category"
                 :created="$announcement->created_at">
                 <a href="{{ route('announcement.show', compact('announcement')) }}" class="btn"
                     style="background-color: var(--secondary-color);">{{__('uiAnnoun.detail')}}</a>
